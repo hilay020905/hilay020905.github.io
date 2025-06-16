@@ -28,17 +28,17 @@
     </header>
 
     <div class="settings-panel">
-        <button class="settings-icon" id="settings-toggle">⚙️</button>
-        <button class="settings-icon" id="tools-toggle">🛠️</button>
-        <button class="settings-icon" id="languages-toggle">🌐</button>
-        <button class="settings-icon" id="skills-toggle">💡</button>
+        <button class="settings-icon" id="settings-toggle" title="Settings">⚙️</button>
+        <button class="settings-icon" id="tools-toggle" title="Tools">🛠️</button>
+        <button class="settings-icon" id="languages-toggle" title="Languages">🌐</button>
+        <button class="settings-icon" id="skills-toggle" title="Skills">💡</button>
 
         <div class="settings-card" id="settings-card">
             <h3>Personalize Your Experience</h3>
             <div class="settings-group">
                 <label>Theme</label>
                 <div class="theme-options">
-                    <input type="checkbox" id="theme-switch" style="display: none;">
+                    <input type="checkbox" id="theme-switch" class="theme-toggle">
                     <label for="theme-switch" class="toggle-label">
                         <span class="theme-icon">🌙</span>
                         <span class="theme-icon">🌞</span>
@@ -48,17 +48,17 @@
             <div class="settings-group">
                 <label>Accent Color</label>
                 <div class="color-options">
-                    <button class="color-dot active" data-color="cyber-cyan" style="background: #00f7ff;"></button>
-                    <button class="color-dot" data-color="lime-green" style="background: #00ff5e;"></button>
-                    <button class="color-dot" data-color="rose-pink" style="background: #ff5e99;"></button>
-                    <button class="color-dot" data-color="amber-gold" style="background: #ffb700;"></button>
+                    <button class="color-dot" style="background: #00f7ff;" data-color="cyber-cyan"></button>
+                    <button class="color-dot" style="background: #00ff5e;" data-color="lime-green"></button>
+                    <button class="color-dot" style="background: #ff5e99;" data-color="rose-pink"></button>
+                    <button class="color-dot" style="background: #ffb700;" data-color="amber-gold"></button>
                 </div>
             </div>
             <div class="settings-group">
                 <label>UI Style</label>
                 <div class="style-options">
                     <button class="style-btn" data-style="glassmorphism">🧊 Glass</button>
-                    <button class="style-btn active" data-style="flat">⬜ Flat</button>
+                    <button class="style-btn" data-style="flat">⬜ Flat</button>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
 
         <div class="settings-card" id="languages-card">
             <h3>Languages</h3>
-            <h4>Advanced:</h4>
+            <p><strong>Advanced:</strong></p>
             <ul class="languages-list">
                 <li>C</li>
                 <li>Python</li>
@@ -93,7 +93,7 @@
                 <li>SystemVerilog</li>
                 <li>CUDA</li>
             </ul>
-            <h4>Beginner:</h4>
+            <p><strong>Beginner:</strong></p>
             <ul class="languages-list">
                 <li>C++</li>
                 <li>HTML</li>
@@ -117,9 +117,7 @@
             <p class="final-statement">Skills I have</p>
         </div>
 
-        <div class="visitor-count">
-            <span>👁️</span> <span id="visitor-number">0</span>
-        </div>
+        <p class="visitor-count">👁️ <span id="visitor-number">0</span></p>
     </div>
 
     <main>
@@ -131,44 +129,40 @@
         </section>
 
         <section class="interests" id="interests">
-            <div class="container">
+            <div class="container interests-content">
                 <h2>🌟 Interests</h2>
-                <div class="interests-content">
-                    <p>My interests span a wide range of cutting-edge technologies and innovative fields within and beyond VLSI design. Here are some areas that fuel my curiosity and drive my work:</p>
-                    <ul class="vlsi-list">
-                        <li>Advanced Chip Architectures: Exploring next-generation processor designs, including RISC-V extensions and heterogeneous computing for AI and machine learning workloads.</li>
-                        <li>Low-Power Design Innovations: Researching novel techniques like near-threshold computing and energy harvesting for ultra-low-power IoT devices.</li>
-                        <li>Hardware Security: Investigating secure hardware design, including countermeasures against side-channel attacks and hardware Trojans.</li>
-                        <li>Quantum Computing Hardware: Studying quantum circuit design and the integration of quantum and classical systems for scalable quantum processors.</li>
-                        <li>Open-Source EDA Tools: Contributing to and leveraging open-source electronic design automation tools to democratize chip design.</li>
-                    </ul>
-                </div>
+                <p>My interests span a wide range of cutting-edge technologies and innovative fields within and beyond VLSI design. Here are some areas that fuel my curiosity and drive my work:</p>
+                <ul class="vlsi-list">
+                    <li>Advanced Chip Architectures: Exploring next-generation processor designs, including RISC-V extensions and heterogeneous computing for AI and machine learning workloads.</li>
+                    <li>Low-Power Design Innovations: Researching novel techniques like near-threshold computing and energy harvesting for ultra-low-power IoT devices.</li>
+                    <li>Hardware Security: Investigating secure hardware design, including countermeasures against side-channel attacks and hardware Trojans.</li>
+                    <li>Quantum Computing Hardware: Studying quantum circuit design and the integration of quantum and classical systems for scalable quantum processors.</li>
+                    <li>Open-Source EDA Tools: Contributing to and leveraging open-source electronic design automation tools to democratize chip design.</li>
+                </ul>
             </div>
         </section>
 
         <section class="vlsi" id="vlsi">
-            <div class="container">
+            <div class="container vlsi-content">
                 <h2>🔧 Digital VLSI Overview</h2>
-                <div class="vlsi-content">
-                    <h3>What is Digital VLSI?</h3>
-                    <p>Digital Very Large Scale Integration (VLSI) focuses on designing and implementing digital integrated circuits (ICs) by integrating millions or billions of transistors onto a single chip. It is the foundation of modern digital systems like microprocessors, memory chips, and FPGAs, enabling high-performance and energy-efficient hardware for applications such as computing, AI, and IoT.</p>
-                    <h3>Domains in Digital VLSI</h3>
-                    <ul class="vlsi-list">
-                        <li>Digital Design: Involves creating digital circuits using Hardware Description Languages (HDLs) like Verilog and VHDL to design processors, memory, and logic blocks.</li>
-                        <li>Physical Design: Focuses on the layout and placement of transistors and interconnects on the chip, optimizing for area, power, and timing.</li>
-                        <li>Verification: Ensures the digital design functions correctly through simulation, formal verification, and methodologies like Universal Verification Methodology (UVM).</li>
-                        <li>Testing and DFT: Implements Design for Testability (DFT) techniques, such as scan chains and BIST, to detect manufacturing defects in digital ICs.</li>
-                    </ul>
-                    <h3>Key Subjects in Digital VLSI</h3>
-                    <ul class="vlsi-list">
-                        <li>Digital Electronics: Core concepts of logic gates, flip-flops, and finite state machines.</li>
-                        <li>CMOS Technology: Understanding CMOS fabrication, transistor operation, and scaling challenges for digital circuits.</li>
-                        <li>HDL Programming: Using Verilog, VHDL, or SystemVerilog for designing and simulating digital circuits.</li>
-                        <li>ASIC Design Flow: Steps from RTL design to fabrication, including synthesis, place-and-route, and timing analysis.</li>
-                        <li>EDA Tools: Proficiency with tools like Cadence, Synopsys, and Mentor Graphics for digital design and verification.</li>
-                        <li>Low-Power Design: Techniques like clock gating, power gating, and voltage scaling to reduce power consumption in digital ICs.</li>
-                    </ul>
-                </div>
+                <h3>What is Digital VLSI?</h3>
+                <p>Digital Very Large Scale Integration (VLSI) focuses on designing and implementing digital integrated circuits (ICs) by integrating millions or billions of transistors onto a single chip. It is the foundation of modern digital systems like microprocessors, memory chips, and FPGAs, enabling high-performance and energy-efficient hardware for applications such as computing, AI, and IoT.</p>
+                <h3>Domains in Digital VLSI</h3>
+                <ul class="vlsi-list">
+                    <li>Digital Design: Involves creating digital circuits using Hardware Description Languages (HDLs) like Verilog and VHDL to design processors, memory, and logic blocks.</li>
+                    <li>Physical Design: Focuses on the layout and placement of transistors and interconnects on the chip, optimizing for area, power, and timing.</li>
+                    <li>Verification: Ensures the digital design functions correctly through simulation, formal verification, and methodologies like Universal Verification Methodology (UVM).</li>
+                    <li>Testing and DFT: Implements Design for Testability (DFT) techniques, such as scan chains and BIST, to detect manufacturing defects in digital ICs.</li>
+                </ul>
+                <h3>Key Subjects in Digital VLSI</h3>
+                <ul class="vlsi-list">
+                    <li>Digital Electronics: Core concepts of logic gates, flip-flops, and finite state machines.</li>
+                    <li>CMOS Technology: Understanding CMOS fabrication, transistor operation, and scaling challenges for digital circuits.</li>
+                    <li>HDL Programming: Using Verilog, VHDL, or SystemVerilog for designing and simulating digital circuits.</li>
+                    <li>ASIC Design Flow: Steps from RTL design to fabrication, including synthesis, place-and-route, and timing analysis.</li>
+                    <li>EDA Tools: Proficiency with tools like Cadence, Synopsys, and Mentor Graphics for digital design and verification.</li>
+                    <li>Low-Power Design: Techniques like clock gating, power gating, and voltage scaling to reduce power consumption in digital ICs.</li>
+                </ul>
             </div>
         </section>
 
