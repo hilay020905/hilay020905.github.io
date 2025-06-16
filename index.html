@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilay Patel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Hilay Patel</h1>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#vlsi">VLSI</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="settings-panel">
+        <button class="settings-icon" id="settings-toggle">⚙️</button>
+        <button class="settings-icon" id="tools-toggle">🛠️</button>
+        <button class="settings-icon" id="languages-toggle">🌐</button>
+        <button class="settings-icon" id="skills-toggle">💡</button>
+
+        <div class="settings-card" id="settings-card">
+            <h3>Personalize Your Experience</h3>
+            <div class="settings-group">
+                <label>Theme</label>
+                <div class="theme-options">
+                    <input type="checkbox" id="theme-switch" style="display: none;">
+                    <label for="theme-switch" class="toggle-label">
+                        <span class="theme-icon">🌙</span>
+                        <span class="theme-icon">🌞</span>
+                    </label>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>Accent Color</label>
+                <div class="color-options">
+                    <button class="color-dot active" data-color="cyber-cyan" style="background: #00f7ff;"></button>
+                    <button class="color-dot" data-color="lime-green" style="background: #00ff5e;"></button>
+                    <button class="color-dot" data-color="rose-pink" style="background: #ff5e99;"></button>
+                    <button class="color-dot" data-color="amber-gold" style="background: #ffb700;"></button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>UI Style</label>
+                <div class="style-options">
+                    <button class="style-btn" data-style="glassmorphism">🧊 Glass</button>
+                    <button class="style-btn active" data-style="flat">⬜ Flat</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-card" id="tools-card">
+            <h3>Tools</h3>
+            <ul class="tools-list">
+                <li>Xilinx Vivado</li>
+                <li>ModelSim</li>
+                <li>Cadence</li>
+                <li>MATLAB</li>
+                <li>LTspice</li>
+                <li>TINA</li>
+                <li>LabVIEW</li>
+                <li>Blender</li>
+                <li>Autodesk Fusion 360</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Premiere Pro</li>
+                <li>Procreate</li>
+                <li>DaVinci Resolve</li>
+            </ul>
+            <p class="final-statement">Tools I prefer</p>
+        </div>
+
+        <div class="settings-card" id="languages-card">
+            <h3>Languages</h3>
+            <h4>Advanced:</h4>
+            <ul class="languages-list">
+                <li>C</li>
+                <li>Python</li>
+                <li>Verilog</li>
+                <li>SystemVerilog</li>
+                <li>CUDA</li>
+            </ul>
+            <h4>Beginner:</h4>
+            <ul class="languages-list">
+                <li>C++</li>
+                <li>HTML</li>
+                <li>JavaScript</li>
+                <li>CSS</li>
+                <li>OpenCL</li>
+            </ul>
+        </div>
+
+        <div class="settings-card" id="skills-card">
+            <h3>Skills</h3>
+            <ul class="skills-list">
+                <li>Computer Architecture</li>
+                <li>Parallel Computing</li>
+                <li>Matplotlib</li>
+                <li>NumPy</li>
+                <li>Pandas</li>
+                <li>Arduino</li>
+                <li>Fine Arts</li>
+            </ul>
+            <p class="final-statement">Skills I have</p>
+        </div>
+
+        <div class="visitor-count">
+            <span>👁️</span> <span id="visitor-number">0</span>
+        </div>
+    </div>
+
+    <main>
+        <section class="intro">
+            <div class="container">
+                <h2>Hello, I'm Hilay Patel</h2>
+                <p>I am driven by a passion for VLSI design, pushing the boundaries of hardware innovation. With deep expertise in SystemVerilog and Verilog, I craft high-performance digital systems that redefine efficiency and scalability. My work blends cutting-edge design techniques with novel optimization strategies to bring transformative ideas to silicon. Dive into my projects to explore the future of chip design!</p>
+            </div>
+        </section>
+
+        <section class="interests" id="interests">
+            <div class="container">
+                <h2>🌟 Interests</h2>
+                <div class="interests-content">
+                    <p>My interests span a wide range of cutting-edge technologies and innovative fields within and beyond VLSI design. Here are some areas that fuel my curiosity and drive my work:</p>
+                    <ul class="vlsi-list">
+                        <li>Advanced Chip Architectures: Exploring next-generation processor designs, including RISC-V extensions and heterogeneous computing for AI and machine learning workloads.</li>
+                        <li>Low-Power Design Innovations: Researching novel techniques like near-threshold computing and energy harvesting for ultra-low-power IoT devices.</li>
+                        <li>Hardware Security: Investigating secure hardware design, including countermeasures against side-channel attacks and hardware Trojans.</li>
+                        <li>Quantum Computing Hardware: Studying quantum circuit design and the integration of quantum and classical systems for scalable quantum processors.</li>
+                        <li>Open-Source EDA Tools: Contributing to and leveraging open-source electronic design automation tools to democratize chip design.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="vlsi" id="vlsi">
+            <div class="container">
+                <h2>🔧 Digital VLSI Overview</h2>
+                <div class="vlsi-content">
+                    <h3>What is Digital VLSI?</h3>
+                    <p>Digital Very Large Scale Integration (VLSI) focuses on designing and implementing digital integrated circuits (ICs) by integrating millions or billions of transistors onto a single chip. It is the foundation of modern digital systems like microprocessors, memory chips, and FPGAs, enabling high-performance and energy-efficient hardware for applications such as computing, AI, and IoT.</p>
+                    <h3>Domains in Digital VLSI</h3>
+                    <ul class="vlsi-list">
+                        <li>Digital Design: Involves creating digital circuits using Hardware Description Languages (HDLs) like Verilog and VHDL to design processors, memory, and logic blocks.</li>
+                        <li>Physical Design: Focuses on the layout and placement of transistors and interconnects on the chip, optimizing for area, power, and timing.</li>
+                        <li>Verification: Ensures the digital design functions correctly through simulation, formal verification, and methodologies like Universal Verification Methodology (UVM).</li>
+                        <li>Testing and DFT: Implements Design for Testability (DFT) techniques, such as scan chains and BIST, to detect manufacturing defects in digital ICs.</li>
+                    </ul>
+                    <h3>Key Subjects in Digital VLSI</h3>
+                    <ul class="vlsi-list">
+                        <li>Digital Electronics: Core concepts of logic gates, flip-flops, and finite state machines.</li>
+                        <li>CMOS Technology: Understanding CMOS fabrication, transistor operation, and scaling challenges for digital circuits.</li>
+                        <li>HDL Programming: Using Verilog, VHDL, or SystemVerilog for designing and simulating digital circuits.</li>
+                        <li>ASIC Design Flow: Steps from RTL design to fabrication, including synthesis, place-and-route, and timing analysis.</li>
+                        <li>EDA Tools: Proficiency with tools like Cadence, Synopsys, and Mentor Graphics for digital design and verification.</li>
+                        <li>Low-Power Design: Techniques like clock gating, power gating, and voltage scaling to reduce power consumption in digital ICs.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="projects">
+            <div class="container">
+                <h2>🛠️ Projects</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <span class="project-icon">🚀</span>
+                        <h3>RISC-V Processor Project (RV32I)</h3>
+                        <p>Designed a 32-bit RISC-V processor using Verilog, implemented pipelining and hazard detection. Simulated with Vivado and iverilog.</p>
+                        <p>This repository contains implementations of both single-cycle and pipelined RISC-V cores in Verilog, supporting the RV32I instruction set.</p>
+                        <a href="https://github.com" target="_blank">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <span class="project-icon">🧠</span>
+                        <h3>Branch Prediction Models Comparison</h3>
+                        <p>This project presents a comparative analysis of branch prediction models, including 2-bit Saturating Counter, Perceptron Model, and TAGE Model, evaluated using trace-driven simulation.</p>
+                        <a href="https://github.com" target="_blank">View on GitHub</a>
+                    </div>
+                    <p>New projects coming soon!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="publications" id="publications">
+            <div class="container">
+                <h2>📄 Publications</h2>
+                <ul class="pub-list">
+                    <li>Title of Publication – Journal/Conference Name, 2024</li>
+                    <li>Another Paper – IEEE Conference, 2023</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>📬 Contact</h2>
+                <p>Email me at: <a href="mailto:[email protected]">[email protected]</a></p>
+                <p>LinkedIn: <a href="https://linkedin.com" target="_blank">My Profile</a></p>
+                <p>GitHub: <a href="https://github.com" target="_blank">My GitHub</a></p>
+                <p>🏫 Student at Indian Institute of Technology, Tirupati</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Hilay Patel</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
