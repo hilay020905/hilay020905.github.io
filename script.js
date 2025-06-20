@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Feature detection for touch devices
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
     // Dropdown Panel Toggle
     const toggles = [
         { toggle: settingsToggle, card: settingsCard },
@@ -60,15 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
         { toggle: skillsToggle, card: skillsCard }
     ];
 
-    // Feature detection for touch devices
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
     toggles.forEach(({ toggle, card }) => {
         if (toggle && card) {
             const eventType = isTouchDevice ? 'touchend' : 'click';
             toggle.addEventListener(eventType, (e) => {
                 e.preventDefault(); // Prevent default behaviors like long-press
-                e.stopPropagation(); // Prevent event bubbling
+                e.stopPropagation();
                 toggles.forEach(({ card: otherCard }) => {
                     if (otherCard !== card) {
                         otherCard.classList.remove('active');
@@ -77,22 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.toggle('active');
             });
 
-            // Handle touchstart for immediate visual feedback
+            // Add touchstart for immediate feedback on mobile
             if (isTouchDevice) {
                 toggle.addEventListener('touchstart', (e) => {
-                    e.preventDefault(); // Prevent long-press context menu
-                    toggle.classList.add('active-touch'); // Add visual feedback
+                    e.preventDefault(); // Prevent context menu
+                    toggle.classList.add('active-touch');
                 });
-                toggle.addEventListener('touchend', (e) => {
-                    toggle.classList.remove('active-touch'); // Remove visual feedback
-                    // Ensure touchend doesn't trigger click
-                    e.stopPropagation();
-                });
-                // Prevent click event from firing after touch events
-                toggle.addEventListener('click', (e) => {
-                    if (isTouchDevice) {
-                        e.preventDefault();
-                    }
+                toggle.addEventListener('touchend', () => {
+                    toggle.classList.remove('active-touch');
                 });
             }
         } else {
@@ -170,8 +162,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn.dataset.style === savedStyle) btn.classList.add('active');
     });
 
-    // Custom cursor (only for non-mobile devices, >768px)
-    if (window.innerWidth > 768) {
+    // Custom cursor (only for non-touch devices with larger screens)
+    if (window.innerWidth > 768 && !isTouchDevice) {
         const cursor = document.createElement('div');
         cursor.classList.add('custom-cursor');
         document.body.appendChild(cursor);
@@ -181,22 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
             cursor.style.top = `${e.clientY}px`;
         });
 
-        document.addEventListener('touchmove', (e) => {
-            const touch = e.touches[0];
-            cursor.style.left = `${touch.clientX}px`;
-            cursor.style.top = `${touch.clientY}px`;
-        });
-
         document.querySelectorAll('a, .project-card, .toggle-label, .settings-icon, .color-dot, .style-btn').forEach(element => {
-            ['mouseenter', 'touchstart'].forEach(event => {
-                element.addEventListener(event, () => {
-                    cursor.classList.add('hover');
-                });
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
             });
-            ['mouseleave', 'touchend'].forEach(event => {
-                element.addEventListener(event, () => {
-                    cursor.classList.remove('hover');
-                });
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
             });
         });
     }
