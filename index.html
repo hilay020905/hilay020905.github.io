@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hilay Patel</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
@@ -28,13 +28,11 @@
     </header>
 
     <div class="settings-panel">
-        <button class="settings-icon" id="settings-toggle">⚙️</button>
-        <button class="settings-icon" id="tools-toggle">🛠️</button>
-        <button class="settings-icon" id="languages-toggle">🌐</button>
-        <button class="settings-icon" id="skills-toggle">💡</button>
-    </div>
-    <div class="visitor-count">
-        👁️ <span id="visitor-number">0</span>
+        <button class="settings-icon" id="settings-toggle" title="Settings">⚙️</button>
+        <button class="settings-icon" id="tools-toggle" title="Tools">🛠️</button>
+        <button class="settings-icon" id="languages-toggle" title="Languages">🌐</button>
+        <button class="settings-icon" id="skills-toggle" title="Skills">💡</button>
+        <span class="visitor-count" id="visitor-count">👁️ <span id="visitor-number">0</span></span>
     </div>
 
     <div class="settings-card" id="settings-card">
@@ -42,7 +40,7 @@
         <div class="settings-group">
             <label>Theme</label>
             <div class="theme-options">
-                <input type="checkbox" id="theme-switch" style="display: none;">
+                <input type="checkbox" id="theme-switch" hidden>
                 <label for="theme-switch" class="toggle-label">
                     <span class="theme-icon">🌙</span>
                     <span class="theme-icon">🌞</span>
@@ -61,13 +59,13 @@
         <div class="settings-group">
             <label>UI Style</label>
             <div class="style-options">
-                <button class="style-btn" data-style="glass">🧊 Glass</button>
+                <button class="style-btn" data-style="glassmorphism">🧊 Glass</button>
                 <button class="style-btn" data-style="flat">⬜ Flat</button>
             </div>
         </div>
     </div>
 
-    <div class="settings-card" id="tools-card">
+    <div class="settings-card tools-card" id="tools-card">
         <h3>Tools</h3>
         <ul class="tools-list">
             <li>Xilinx Vivado</li>
@@ -87,7 +85,7 @@
         <p class="final-statement">Tools I prefer</p>
     </div>
 
-    <div class="settings-card" id="languages-card">
+    <div class="settings-card languages-card" id="languages-card">
         <h3>Languages</h3>
         <p>Advanced:</p>
         <ul class="languages-list">
@@ -108,7 +106,7 @@
         <p class="final-statement">Skills I have</p>
     </div>
 
-    <div class="settings-card" id="skills-card">
+    <div class="settings-card skills-card" id="skills-card">
         <h3>Skills</h3>
         <ul class="skills-list">
             <li>Computer Architecture</li>
@@ -171,55 +169,50 @@
         </div>
     </section>
 
-         <section class="projects" id="projects">
-            <div class="container">
-                <h2>🛠️ Projects</h2>
-                <div class="projects-container">
-                    <div class="project-card">
-                        <span class="project-icon">🚀</span>
-                        <h3>RISC-V Processor Project (RV32I)</h3>
-                        <p>Designed a 32-bit RISC-V processor using Verilog, implemented pipelining and hazard detection. Simulated with Vivado and iverilog.</p>
-                        <p>This repository contains implementations of both single-cycle and pipelined RISC-V cores in Verilog, supporting the RV32I instruction set.</p>
-                        <a href="https://github.com/hilay020905/RISC_V_CORE" target="_blank">View on GitHub</a>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-icon">🧠</span>
-                        <h3>Branch Prediction Models Comparison</h3>
-                        <p>This project presents a comparative analysis of branch prediction models, including 2-bit Saturating Counter, Perceptron Model, and TAGE Model, evaluated using trace-driven simulation.</p>
-                        <a href="https://github.com/hilay020905/Branch_prediction" target="_blank">View on GitHub</a>
-                    </div>
-                    <p>New projects coming soon!</p>
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2>🛠️ Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <span class="project-icon">🚀</span>
+                    <h3>RISC-V Processor Project (RV32I)</h3>
+                    <p>Designed a 32-bit RISC-V processor using Verilog, implemented pipelining and hazard detection. Simulated with Vivado and iverilog.</p>
+                    <p>This repository contains implementations of both single-cycle and pipelined RISC-V cores in Verilog, supporting the RV32I instruction set.</p>
+                    <a href="https://github.com/your-repo/risc-v">Link here</a>
                 </div>
+                <div class="project-card">
+                    <span class="project-icon">🧠</span>
+                    <h3>Branch Prediction Models Comparison</h3>
+                    <p>This project presents a comparative analysis of branch prediction models, including 2-bit Saturating Counter, Perceptron Model, and TAGE Model, evaluated using trace-driven simulation.</p>
+                    <a href="https://github.com/your-repo/branch-prediction">Link here</a>
+                </div>
+                <p>New projects coming soon!</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="publications" id="publications">
-            <div class="container">
-                <h2>📄 Publications</h2>
-                <ul class="pub-list">
-                    <li>Title of Publication – Journal/Conference Name, 2024</li>
-                    <li>Another Paper – IEEE Conference, 2023</li>
-                </ul>
-            </div>
-        </section>
+    <section class="publications" id="publications">
+        <div class="container">
+            <h2>📄 Publications</h2>
+            <ul class="pub-list">
+                <li>Title of Publication – Journal/Conference Name, 2024</li>
+                <li>Another Paper – IEEE Conference, 2023</li>
+            </ul>
+        </div>
+    </section>
 
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2>📬 Contact</h2>
-                <p>Email me at: <a href="mailto:[email protected]">ee23b066@iittp.ac.in</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/hilay-patel-84a052286/" target="_blank">My Profile</a></p>
-                <p>GitHub: <a href="https://github.com/hilay020905" target="_blank">My GitHub</a></p>
-                <p>🏫 Student at Indian Institute of Technology, Tirupati</p>
-            </div>
-        </section>
-    </main>
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>📬 Contact</h2>
+            <p>Email me at: <a href="mailto:hilaypatel@example.com">hilaypatel@example.com</a></p>
+            <p>LinkedIn: <a href="https://linkedin.com/in/hilaypatel">My Profile</a></p>
+            <p>GitHub: <a href="https://github.com/hilaypatel">My GitHub</a></p>
+            <p>🏫 Student at Indian Institute of Technology, Tirupati</p>
+        </div>
+    </section>
 
     <footer>
-        <div class="container">
-            <p>© 2025 Hilay Patel</p>
-        </div>
+        <p>© 2025 Hilay Patel</p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
