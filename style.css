@@ -372,7 +372,7 @@ body.light-theme footer {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    max-width: calc(100% - 2rem); /* Ensure panel fits within viewport */
+    max-width: calc(100% - 2rem);
     padding: 0.2rem;
 }
 
@@ -709,78 +709,68 @@ body.light-theme .custom-cursor.hover {
     .custom-cursor {
         display: none;
     }
-}
-
-.tools-list,
-.languages-list,
-.skills-list {
-    list-style-type: disc;
-    padding-left: 2rem;
-    color: #A0A0A0;
-    margin-bottom: 1.2rem;
-}
-
-body.light-theme .tools-list,
-body.light-theme .languages-list,
-body.light-theme .skills-list {
-    color: #666666;
-}
-
-.tools-list li,
-.languages-list li,
-.skills-list li {
-    margin-bottom: 0.75rem;
-}
-
-.final-statement {
-    font-size: 1rem;
-    color: var(--accent-color);
-    text-align: center;
-    margin-top: 0.7rem;
-}
-
-body.light-theme .final-statement {
-    color: var(--accent-color);
-}
-
-.visitor-count {
-    font-size: 1rem;
-    color: #A0A0A0;
-    margin-top: 0.7rem;
-    text-align: right;
-}
-
-body.light-theme .visitor-count {
-    color: #666666;
-}
-
-@media (max-width: 1200px) {
-    .container {
-        max-width: 1000px;
-    }
-
-    h1 {
-        font-size: 2.4rem;
-    }
-
-    .intro h2 {
-        font-size: 2.3rem;
-    }
-
-    section h2 {
-        font-size: 1.9rem;
-    }
-
-    .projects-container {
-        max-width: 800px;
-    }
 
     .settings-panel {
+        top: 0.5rem;
         right: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 35px);
+        grid-template-rows: repeat(2, 35px);
+        gap: 0.4rem;
+        padding: 0.2rem;
+        max-width: 80px;
     }
-}
 
-@media (max-width: 768px) {
+    .settings-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+
+    .visitor-count {
+        position: fixed;
+        top: 4.5rem;
+        right: 1rem;
+        text-align: center;
+        width: 80px;
+        font-size: 0.9rem;
+        z-index: 40;
+    }
+
+    .settings-card {
+        width: 220px;
+        top: 5rem;
+        right: 0;
+    }
+
+    .color-dot {
+        width: 24px;
+        height: 24px;
+    }
+
+    .style-btn {
+        padding: 0.6rem 1rem;
+    }
+
+    .toggle-label {
+        width: 60px;
+        height: 24px;
+        font-size: 0.9rem;
+    }
+
+    .toggle-label .theme-icon {
+        font-size: 0.9rem;
+    }
+
+    .toggle-label::after {
+        width: 20px;
+        height: 20px;
+    }
+
+    #theme-switch:checked + .toggle-label::after {
+        transform: translateX(36px);
+    }
+
     .hamburger {
         display: flex;
     }
@@ -845,56 +835,6 @@ body.light-theme .visitor-count {
     .project-card {
         padding: 1.8rem;
     }
-
-    .settings-panel {
-        top: 0.5rem;
-        right: 1rem; /* Closer to edge for visibility */
-        flex-direction: row; /* Horizontal for mobile */
-        gap: 0.4rem;
-        z-index: 40;
-        max-width: calc(100% - 2rem); /* Ensure fits within viewport */
-        padding: 0.2rem;
-    }
-
-    .settings-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-
-    .settings-card {
-        width: 220px;
-        top: 45px;
-        right: 0;
-    }
-
-    .color-dot {
-        width: 24px;
-        height: 24px;
-    }
-
-    .style-btn {
-        padding: 0.6rem 1rem;
-    }
-
-    .toggle-label {
-        width: 60px;
-        height: 24px;
-        font-size: 0.9rem;
-    }
-
-    .toggle-label .theme-icon {
-        font-size: 0.9rem;
-    }
-
-    .toggle-label::after {
-        width: 20px;
-        height: 20px;
-    }
-
-    #theme-switch:checked + .toggle-label::after {
-        transform: translateX(36px);
-    }
 }
 
 @media (max-width: 480px) {
@@ -955,12 +895,13 @@ body.light-theme .visitor-count {
 
     .settings-panel {
         top: 0.5rem;
-        right: 1rem; /* Closer to edge for visibility */
-        flex-direction: row; /* Horizontal for small screens */
+        right: 1rem;
+        display: grid;
+        grid-template-columns: repeat(2, 32px);
+        grid-template-rows: repeat(2, 32px);
         gap: 0.3rem;
-        z-index: 40;
-        max-width: calc(100% - 2rem); /* Ensure fits within viewport */
         padding: 0.2rem;
+        max-width: 70px;
     }
 
     .settings-icon {
@@ -969,10 +910,20 @@ body.light-theme .visitor-count {
         font-size: 0.9rem;
     }
 
+    .visitor-count {
+        position: fixed;
+        top: 4rem;
+        right: 1rem;
+        text-align: center;
+        width: 70px;
+        font-size: 0.85rem;
+        z-index: 40;
+    }
+
     .settings-card {
         width: 200px;
         padding: 1.2rem;
-        top: 40px; /* Adjusted for horizontal layout */
+        top: 4.5rem;
         right: 0;
     }
 
@@ -994,11 +945,6 @@ body.light-theme .visitor-count {
         padding: 0.5rem 0.9rem;
     }
 
-    .custom-cursor {
-        width: 12px;
-        height: 12px;
-    }
-
     .toggle-label {
         width: 60px;
         height: 24px;
@@ -1016,5 +962,31 @@ body.light-theme .visitor-count {
 
     #theme-switch:checked + .toggle-label::after {
         transform: translateX(36px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .intro h2 {
+        font-size: 2.3rem;
+    }
+
+    section h2 {
+        font-size: 1.9rem;
+    }
+
+    .projects-container {
+        max-width: 800px;
+    }
+
+    .settings-panel {
+        right: 1rem;
     }
 }
