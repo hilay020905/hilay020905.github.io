@@ -368,7 +368,7 @@ body.light-theme footer {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 20;
+    z-index: 40; /* Increased to ensure visibility over nav and hamburger */
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -846,9 +846,10 @@ body.light-theme .visitor-count {
 
     .settings-panel {
         top: 1rem;
-        right: 4.5rem;
-        flex-direction: row;
-        gap: 0.3rem;
+        right: 4rem; /* Adjusted to avoid overlap with hamburger */
+        flex-direction: row; /* Keep horizontal for better visibility */
+        gap: 0.4rem;
+        z-index: 40; /* Ensure above nav */
     }
 
     .settings-icon {
@@ -860,7 +861,7 @@ body.light-theme .visitor-count {
     .settings-card {
         width: 220px;
         top: 45px;
-        right: -10px;
+        right: 0; /* Adjusted for better alignment */
     }
 
     .color-dot {
@@ -950,9 +951,10 @@ body.light-theme .visitor-count {
 
     .settings-panel {
         top: 0.5rem;
-        right: 3.5rem;
-        flex-direction: column;
-        gap: 0.2rem;
+        right: 3rem; /* Adjusted to fit smaller screens */
+        flex-direction: column; /* Stack vertically only for very small screens */
+        gap: 0.3rem;
+        z-index: 40; /* Ensure above nav */
     }
 
     .settings-icon {
@@ -964,7 +966,7 @@ body.light-theme .visitor-count {
     .settings-card {
         width: 200px;
         padding: 1.2rem;
-        top: 140px;
+        top: 120px; /* Adjusted to account for vertical stacking */
         right: 0;
     }
 
