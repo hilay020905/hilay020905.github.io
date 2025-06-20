@@ -77,14 +77,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 card.classList.toggle('active');
             });
 
-            // Optional: Add touchstart for immediate visual feedback
+            // Handle touchstart for immediate visual feedback
             if (isTouchDevice) {
                 toggle.addEventListener('touchstart', (e) => {
                     e.preventDefault(); // Prevent long-press context menu
                     toggle.classList.add('active-touch'); // Add visual feedback
                 });
-                toggle.addEventListener('touchend', () => {
+                toggle.addEventListener('touchend', (e) => {
                     toggle.classList.remove('active-touch'); // Remove visual feedback
+                    // Ensure touchend doesn't trigger click
+                    e.stopPropagation();
+                });
+                // Prevent click event from firing after touch events
+                toggle.addEventListener('click', (e) => {
+                    if (isTouchDevice) {
+                        e.preventDefault();
+                    }
                 });
             }
         } else {
@@ -162,34 +170,36 @@ document.addEventListener('DOMContentLoaded', () => {
         if (btn.dataset.style === savedStyle) btn.classList.add('active');
     });
 
-    // Custom cursor
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
+    // Custom cursor (only for non-mobile devices, >768px)
+    if (window.innerWidth > 768) {
+        const cursor = document.createElement('div');
+        cursor.classList.add('custom-cursor');
+        document.body.appendChild(cursor);
 
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-    });
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = `${e.clientX}px`;
+            cursor.style.top = `${e.clientY}px`;
+        });
 
-    document.addEventListener('touchmove', (e) => {
-        const touch = e.touches[0];
-        cursor.style.left = `${touch.clientX}px`;
-        cursor.style.top = `${touch.clientY}px`;
-    });
+        document.addEventListener('touchmove', (e) => {
+            const touch = e.touches[0];
+            cursor.style.left = `${touch.clientX}px`;
+            cursor.style.top = `${touch.clientY}px`;
+        });
 
-    document.querySelectorAll('a, .project-card, .toggle-label, .settings-icon, .color-dot, .style-btn').forEach(element => {
-        ['mouseenter', 'touchstart'].forEach(event => {
-            element.addEventListener(event, () => {
-                cursor.classList.add('hover');
+        document.querySelectorAll('a, .project-card, .toggle-label, .settings-icon, .color-dot, .style-btn').forEach(element => {
+            ['mouseenter', 'touchstart'].forEach(event => {
+                element.addEventListener(event, () => {
+                    cursor.classList.add('hover');
+                });
+            });
+            ['mouseleave', 'touchend'].forEach(event => {
+                element.addEventListener(event, () => {
+                    cursor.classList.remove('hover');
+                });
             });
         });
-        ['mouseleave', 'touchend'].forEach(event => {
-            element.addEventListener(event, () => {
-                cursor.classList.remove('hover');
-            });
-        });
-    });
+    }
 
     // Scroll-based project section animation
     window.addEventListener('scroll', () => {
