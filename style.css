@@ -370,17 +370,18 @@ body.light-theme footer {
     right: 1.5rem;
     z-index: 20;
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem; /* Increased gap for better spacing */
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .settings-icon {
     background: #333333;
     border: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    font-size: 1.2rem;
+    width: 45px; /* Larger buttons for better touch targets */
+    height: 45px;
+    font-size: 1.5rem;
     cursor: pointer;
     color: #E8E8E8;
     transition: transform 0.3s ease, background 0.3s ease;
@@ -388,6 +389,7 @@ body.light-theme footer {
     align-items: center;
     justify-content: center;
     touch-action: manipulation;
+    position: relative; /* For pseudo-elements */
 }
 
 body.light-theme .settings-icon {
@@ -404,10 +406,16 @@ body.light-theme .settings-icon {
     background: var(--accent-color);
 }
 
+/* Add active state for better feedback */
+.settings-icon:active {
+    transform: scale(0.95);
+    background: var(--accent-color);
+}
+
 .settings-card {
     display: none;
     position: absolute;
-    top: 50px;
+    top: 60px; /* Adjusted for larger buttons */
     right: 0;
     background: #1A1A1A;
     padding: 1.5rem;
@@ -639,7 +647,7 @@ body.light-theme.ui-glassmorphism .project-card,
 body.light-theme.ui-glassmorphism .settings-card,
 body.light-theme.ui-glassmorphism header,
 body.light-theme.ui-glassmorphism footer,
-body.light-theme.ui-glassmorphism .interests,
+body subterr.ui-glassmorphism .interests,
 body.light-theme.ui-glassmorphism .vlsi,
 body.light-theme.ui-glassmorphism .publications,
 body.light-theme.ui-glassmorphism .contact,
@@ -676,31 +684,6 @@ body.light-theme.ui-flat .contact,
 body.ui-flat .projects {
     background: #FFFFFF;
     border: 1px solid #D1D5DB;
-}
-
-.custom-cursor {
-    position: fixed;
-    width: 14px;
-    height: 14px;
-    background: #A0A0A0;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease, background 0.3s ease;
-    z-index: 1000;
-}
-
-body.light-theme .custom-cursor {
-    background: #666666;
-}
-
-.custom-cursor.hover {
-    transform: translate(-50%, -50%) scale(1.7);
-    background: #E8E8E8;
-}
-
-body.light-theme .custom-cursor.hover {
-    background: #333333;
 }
 
 .tools-list,
@@ -773,10 +756,6 @@ body.light-theme .visitor-count {
 }
 
 @media (max-width: 768px) {
-    .custom-cursor {
-        display: none; /* Disable custom cursor on mobile */
-    }
-
     .hamburger {
         display: flex;
     }
@@ -859,13 +838,13 @@ body.light-theme .visitor-count {
         top: 1rem;
         right: 1rem; /* Adjusted position */
         flex-direction: column; /* Stack buttons vertically */
-        gap: 0.5rem;
+        gap: 1.2rem; /* Increased gap for better spacing */
     }
 
     .settings-icon {
-        width: 45px; /* Larger buttons for touch */
-        height: 45px;
-        font-size: 1.5rem;
+        width: 50px; /* Even larger for mobile */
+        height: 50px;
+        font-size: 1.8rem;
     }
 
     .settings-card,
@@ -874,7 +853,7 @@ body.light-theme .visitor-count {
     .skills-card {
         width: 100%;
         max-width: 300px; /* Responsive width */
-        top: 60px; /* Position below buttons */
+        top: 70px; /* Position below buttons */
         right: 0;
         left: auto;
     }
@@ -939,12 +918,14 @@ body.light-theme .visitor-count {
     .settings-panel {
         top: 0.5rem;
         right: 0.5rem; /* Closer to edge */
+        flex-direction: column;
+        gap: 1rem;
     }
 
     .settings-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1.3rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.6rem;
     }
 
     .settings-card,
@@ -953,36 +934,36 @@ body.light-theme .visitor-count {
     .skills-card {
         width: 90%;
         max-width: 250px; /* Smaller max width */
-        top: 50px;
+        top: 60px;
         right: 0;
     }
 
     .color-dot {
-        width: 28px; /* Larger for touch */
-        height: 28px;
+        width: 30px; /* Larger for touch */
+        height: 30px;
     }
 
     .style-btn {
-        padding: 0.7rem 1.2rem; /* Larger tap area */
-        font-size: 1rem;
+        padding: 0.8rem 1.4rem; /* Larger tap area */
+        font-size: 1.1rem;
     }
 
     .toggle-label {
-        width: 70px;
-        height: 28px;
-        font-size: 1rem;
+        width: 80px;
+        height: 30px;
+        font-size: 1.1rem;
     }
 
     .toggle-label .theme-icon {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .toggle-label::after {
-        width: 24px;
-        height: 24px;
+        width: 26px;
+        height: 26px;
     }
 
     #theme-switch:checked + .toggle-label::after {
-        transform: translateX(42px);
+        transform: translateX(48px);
     }
 }
