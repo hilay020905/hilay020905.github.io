@@ -32,95 +32,94 @@
         <button class="settings-icon" id="tools-toggle">🛠️</button>
         <button class="settings-icon" id="languages-toggle">🌐</button>
         <button class="settings-icon" id="skills-toggle">💡</button>
+    </div>
+    <div class="visitor-count">
+        👁️ <span id="visitor-number">0</span>
+    </div>
 
-        <div class="settings-card" id="settings-card">
-            <h3>Personalize Your Experience</h3>
-            <div class="settings-group">
-                <label>Theme</label>
-                <div class="theme-options">
-                    <input type="checkbox" id="theme-switch" style="display: none;">
-                    <label for="theme-switch" class="toggle-label">
-                        <span class="theme-icon">🌙</span>
-                        <span class="theme-icon">🌞</span>
-                    </label>
-                </div>
-            </div>
-            <div class="settings-group">
-                <label>Accent Color</label>
-                <div class="color-options">
-                    <button class="color-dot" style="background: #00f7ff;" data-color="cyber-cyan"></button>
-                    <button class="color-dot" style="background: #00ff5e;" data-color="lime-green"></button>
-                    <button class="color-dot" style="background: #ff5e99;" data-color="rose-pink"></button>
-                    <button class="color-dot" style="background: #ffb700;" data-color="amber-gold"></button>
-                </div>
-            </div>
-            <div class="settings-group">
-                <label>UI Style</label>
-                <div class="style-options">
-                    <button class="style-btn" data-style="glass">🧊 Glass</button>
-                    <button class="style-btn" data-style="flat">⬜ Flat</button>
-                </div>
+    <div class="settings-card" id="settings-card">
+        <h3>Personalize Your Experience</h3>
+        <div class="settings-group">
+            <label>Theme</label>
+            <div class="theme-options">
+                <input type="checkbox" id="theme-switch" style="display: none;">
+                <label for="theme-switch" class="toggle-label">
+                    <span class="theme-icon">🌙</span>
+                    <span class="theme-icon">🌞</span>
+                </label>
             </div>
         </div>
-
-        <div class="settings-card" id="tools-card">
-            <h3>Tools</h3>
-            <ul class="tools-list">
-                <li>Xilinx Vivado</li>
-                <li>ModelSim</li>
-                <li>Cadence</li>
-                <li>MATLAB</li>
-                <li>LTspice</li>
-                <li>TINA</li>
-                <li>LabVIEW</li>
-                <li>Blender</li>
-                <li>Autodesk Fusion 360</li>
-                <li>Adobe Photoshop</li>
-                <li>Adobe Premiere Pro</li>
-                <li>Procreate</li>
-                <li>DaVinci Resolve</li>
-            </ul>
-            <p class="final-statement">Tools I prefer</p>
+        <div class="settings-group">
+            <label>Accent Color</label>
+            <div class="color-options">
+                <button class="color-dot" style="background: #00f7ff;" data-color="cyber-cyan"></button>
+                <button class="color-dot" style="background: #00ff5e;" data-color="lime-green"></button>
+                <button class="color-dot" style="background: #ff5e99;" data-color="rose-pink"></button>
+                <button class="color-dot" style="background: #ffb700;" data-color="amber-gold"></button>
+            </div>
         </div>
-
-        <div class="settings-card" id="languages-card">
-            <h3>Languages</h3>
-            <p>Advanced:</p>
-            <ul class="languages-list">
-                <li>C</li>
-                <li>Python</li>
-                <li>Verilog</li>
-                <li>SystemVerilog</li>
-                <li>CUDA</li>
-            </ul>
-            <p>Beginner:</p>
-            <ul class="languages-list">
-                <li>C++</li>
-                <li>HTML</li>
-                <li>JavaScript</li>
-                <li>CSS</li>
-                <li>OpenCL</li>
-            </ul>
-            <p class="final-statement">Skills I have</p>
+        <div class="settings-group">
+            <label>UI Style</label>
+            <div class="style-options">
+                <button class="style-btn" data-style="glass">🧊 Glass</button>
+                <button class="style-btn" data-style="flat">⬜ Flat</button>
+            </div>
         </div>
+    </div>
 
-        <div class="settings-card" id="skills-card">
-            <h3>Skills</h3>
-            <ul class="skills-list">
-                <li>Computer Architecture</li>
-                <li>Parallel Computing</li>
-                <li>Matplotlib</li>
-                <li>NumPy</li>
-                <li>Pandas</li>
-                <li>Arduino</li>
-                <li>Fine Arts</li>
-            </ul>
-            <p class="final-statement">Skills I have</p>
-        </div>
+    <div class="settings-card" id="tools-card">
+        <h3>Tools</h3>
+        <ul class="tools-list">
+            <li>Xilinx Vivado</li>
+            <li>ModelSim</li>
+            <li>Cadence</li>
+            <li>MATLAB</li>
+            <li>LTspice</li>
+            <li>TINA</li>
+            <li>LabVIEW</li>
+            <li>Blender</li>
+            <li>Autodesk Fusion 360</li>
+            <li>Adobe Photoshop</li>
+            <li>Adobe Premiere Pro</li>
+            <li>Procreate</li>
+            <li>DaVinci Resolve</li>
+        </ul>
+        <p class="final-statement">Tools I prefer</p>
+    </div>
 
-        <div class="visitor-count">
-            👁️ <span id="visitor-number">0</span>
-        </div>
+    <div class="settings-card" id="languages-card">
+        <h3>Languages</h3>
+        <p>Advanced:</p>
+        <ul class="languages-list">
+            <li>C</li>
+            <li>Python</li>
+            <li>Verilog</li>
+            <li>SystemVerilog</li>
+            <li>CUDA</li>
+        </ul>
+        <p>Beginner:</p>
+        <ul class="languages-list">
+            <li>C++</li>
+            <li>HTML</li>
+            <li>JavaScript</li>
+            <li>CSS</li>
+            <li>OpenCL</li>
+        </ul>
+        <p class="final-statement">Skills I have</p>
+    </div>
+
+    <div class="settings-card" id="skills-card">
+        <h3>Skills</h3>
+        <ul class="skills-list">
+            <li>Computer Architecture</li>
+            <li>Parallel Computing</li>
+            <li>Matplotlib</li>
+            <li>NumPy</li>
+            <li>Pandas</li>
+            <li>Arduino</li>
+            <li>Fine Arts</li>
+        </ul>
+        <p class="final-statement">Skills I have</p>
     </div>
 
     <section class="intro">
