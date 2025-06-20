@@ -18,20 +18,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const skillsCard = document.getElementById('skills-card');
     const colorButtons = document.querySelectorAll('.color-dot');
     const styleButtons = document.querySelectorAll('.style-btn');
+    const visitorCount = document.getElementById('visitor-count');
 
     // Hamburger menu toggle
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    navMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
         });
-    });
+
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
 
     // Smooth scroll with animation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -65,22 +67,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggles.forEach(({ toggle, card }) => {
         if (toggle && card) {
-            const eventType = isTouchDevice ? 'touchend' : 'click';
+            const eventType = isTouchDevice ? 'click' : 'click'; // Use click for consistency
             toggle.addEventListener(eventType, (e) => {
-                e.preventDefault(); // Prevent default behaviors like long-press
+                e.preventDefault();
                 e.stopPropagation();
+                // Close other dropdowns
                 toggles.forEach(({ card: otherCard }) => {
                     if (otherCard !== card) {
                         otherCard.classList.remove('active');
                     }
                 });
+                // Toggle current dropdown
                 card.classList.toggle('active');
             });
 
-            // Add touchstart for immediate feedback on mobile
+            // Visual feedback for touch
             if (isTouchDevice) {
                 toggle.addEventListener('touchstart', (e) => {
-                    e.preventDefault(); // Prevent context menu
+                    e.preventDefault();
                     toggle.classList.add('active-touch');
                 });
                 toggle.addEventListener('touchend', () => {
@@ -94,15 +98,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.settings-panel') && !e.target.closest('.settings-card')) {
+        if (!e.target.closest('.settings-panel') && !e.target.closest('.settings-card, .tools-card, .languages-card, .skills-card')) {
             toggles.forEach(({ card }) => {
                 card.classList.remove('active');
             });
         }
     });
 
-    // Prevent closing when clicking inside settings panel
-    document.querySelectorAll('.settings-card').forEach(card => {
+    // Prevent closing when clicking inside dropdowns
+    document.querySelectorAll('.settings-card, .tools-card, .languages-card, .skills-card').forEach(card => {
         card.addEventListener('click', (e) => {
             e.stopPropagation();
         });
@@ -126,7 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Accent Color Toggle
     colorButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
             const color = button.dataset.color;
             document.body.className = document.body.className.replace(/accent-[^\s]+/, '');
             document.body.classList.add(`accent-${color}`);
@@ -145,7 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // UI Style Toggle
     styleButtons.forEach(button => {
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
             const style = button.dataset.style;
             document.body.className = document.body.className.replace(/ui-[^\s]+/, '');
             document.body.classList.add(`ui-${style}`);
@@ -184,45 +190,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Scroll-based project section animation
-    window.addEventListener('scroll', () => {
-        const projectsRect = projectsSection.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const projectsTop = projectsRect.top;
-        const projectsHeight = projectsRect.height;
+    if (projectsSection && projectCards) {
+        window.addEventListener('scroll', () => {
+            const projectsRect = projectsSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            const projectsTop = projectsRect.top;
+            const projectsHeight = projectsRect.height;
 
-        if (projectsTop < windowHeight * 0.9 && projectsTop > -projectsHeight) {
-            projectsSection.classList.add('enlarge');
-        } else {
-            projectsSection.classList.remove('enlarge');
-        }
-
-        if (projectsTop < windowHeight / 2 && projectsTop > -projectsHeight / 2) {
-            projectsSection.classList.add('tab-effect');
-        } else {
-            projectsSection.classList.remove('tab-effect');
-        }
-
-        const scrollProgress = Math.max(0, Math.min(1, (windowHeight - projectsTop) / (projectsHeight * 1.1)));
-        const visibleCards = Math.ceil(scrollProgress * projectCards.length);
-
-        projectCards.forEach((card, index) => {
-            if (index < visibleCards) {
-                card.classList.add('active');
+            if (projectsTop < windowHeight * 0.9 && projectsTop > -projectsHeight) {
+                projectsSection.classList.add('enlarge');
             } else {
-                card.classList.remove('active');
+                projectsSection.classList.remove('enlarge');
+            }
+
+            if (projectsTop < windowHeight / 2 && projectsTop > -projectsHeight / 2) {
+                projectsSection.classList.add('tab-effect');
+            } else {
+                projectsSection.classList.remove('tab-effect');
+            }
+
+            const scrollProgress = Math.max(0, Math.min(1, (windowHeight - projectsTop) / (projectsHeight * 1.1)));
+            const visibleCards = Math.ceil(scrollProgress * projectCards.length);
+
+            projectCards.forEach((card, index) => {
+                if (index < visibleCards) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+
+            if (projectsTop < -projectsHeight * 0.9) {
+                projectsSection.classList.remove('enlarge', 'tab-effect');
             }
         });
-
-        if (projectsTop < -projectsHeight * 0.9) {
-            projectsSection.classList.remove('enlarge', 'tab-effect');
-        }
-    });
+    }
 
     // Ensure Interests and VLSI sections are visible
-    interestsSection.style.display = 'block';
-    interestsSection.style.opacity = '1';
-    vlsiSection.style.display = 'block';
-    vlsiSection.style.opacity = '1';
+    if (interestsSection) {
+        interestsSection.style.display = 'block';
+        interestsSection.style.opacity = '1';
+    }
+    if (vlsiSection) {
+        vlsiSection.style.display = 'block';
+        vlsiSection.style.opacity = '1';
+    }
 
     // Scroll-based section enlargement for other sections
     const sections = document.querySelectorAll('section:not(.projects)');
@@ -247,8 +259,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Visitor count with increment
     const visitorNumber = document.getElementById('visitor-number');
-    let visitorCount = parseInt(localStorage.getItem('visitorCount') || '0');
-    visitorCount += 1;
-    localStorage.setItem('visitorCount', visitorCount);
-    visitorNumber.textContent = visitorCount;
+    if (visitorNumber) {
+        let visitorCount = parseInt(localStorage.getItem('visitorCount') || '0');
+        visitorCount += 1;
+        localStorage.setItem('visitorCount', visitorCount);
+        visitorNumber.textContent = visitorCount;
+    }
 });
