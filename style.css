@@ -368,7 +368,7 @@ body.light-theme footer {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 40;
+    z-index: 50;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -390,6 +390,7 @@ body.light-theme footer {
     align-items: center;
     justify-content: center;
     touch-action: manipulation;
+    z-index: 50;
 }
 
 body.light-theme .settings-icon {
@@ -719,27 +720,29 @@ body.light-theme .custom-cursor.hover {
         gap: 0.4rem;
         padding: 0.2rem;
         max-width: 80px;
+        z-index: 50;
     }
 
     .settings-icon {
         width: 35px;
         height: 35px;
         font-size: 1rem;
+        z-index: 50;
     }
 
     .visitor-count {
         position: fixed;
-        top: 4.5rem;
+        top: 5rem;
         right: 1rem;
         text-align: center;
         width: 80px;
         font-size: 0.9rem;
-        z-index: 40;
+        z-index: 50;
     }
 
     .settings-card {
         width: 220px;
-        top: 5rem;
+        top: 5.5rem;
         right: 0;
     }
 
@@ -775,7 +778,7 @@ body.light-theme .custom-cursor.hover {
         display: flex;
     }
 
-    nav {
+    .nav {
         position: fixed;
         top: 0;
         right: 0;
@@ -902,28 +905,30 @@ body.light-theme .custom-cursor.hover {
         gap: 0.3rem;
         padding: 0.2rem;
         max-width: 70px;
+        z-index: 50;
     }
 
     .settings-icon {
         width: 32px;
         height: 32px;
         font-size: 0.9rem;
+        z-index: 50;
     }
 
     .visitor-count {
         position: fixed;
-        top: 4rem;
+        top: 4.5rem;
         right: 1rem;
         text-align: center;
         width: 70px;
         font-size: 0.85rem;
-        z-index: 40;
+        z-index: 50;
     }
 
     .settings-card {
         width: 200px;
         padding: 1.2rem;
-        top: 4.5rem;
+        top: 5rem;
         right: 0;
     }
 
