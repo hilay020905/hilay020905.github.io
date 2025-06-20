@@ -368,12 +368,10 @@ body.light-theme footer {
     position: fixed;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 50;
+    z-index: 20;
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    max-width: calc(100% - 2rem);
-    padding: 0.2rem;
 }
 
 .settings-icon {
@@ -390,7 +388,6 @@ body.light-theme footer {
     align-items: center;
     justify-content: center;
     touch-action: manipulation;
-    z-index: 50;
 }
 
 body.light-theme .settings-icon {
@@ -706,79 +703,85 @@ body.light-theme .custom-cursor.hover {
     background: #333333;
 }
 
-@media (max-width: 768px) {
-    .custom-cursor {
-        display: none;
+.tools-list,
+.languages-list,
+.skills-list {
+    list-style-type: disc;
+    padding-left: 2rem;
+    color: #A0A0A0;
+    margin-bottom: 1.2rem;
+}
+
+body.light-theme .tools-list,
+body.light-theme .languages-list,
+body.light-theme .skills-list {
+    color: #666666;
+}
+
+.tools-list li,
+.languages-list li,
+.skills-list li {
+    margin-bottom: 0.75rem;
+}
+
+.final-statement {
+    font-size: 1rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 0.7rem;
+}
+
+body.light-theme .final-statement {
+    color: var(--accent-color);
+}
+
+.visitor-count {
+    font-size: 1rem;
+    color: #A0A0A0;
+    margin-top: 0.7rem;
+    text-align: right;
+}
+
+body.light-theme .visitor-count {
+    color: #666666;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    .intro h2 {
+        font-size: 2.3rem;
+    }
+
+    section h2 {
+        font-size: 1.9rem;
+    }
+
+    .projects-container {
+        max-width: 800px;
     }
 
     .settings-panel {
-        top: 0.5rem;
         right: 1rem;
-        display: grid;
-        grid-template-columns: repeat(2, 35px);
-        grid-template-rows: repeat(2, 35px);
-        gap: 0.4rem;
-        padding: 0.2rem;
-        max-width: 80px;
-        z-index: 50;
     }
+}
 
-    .settings-icon {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-        z-index: 50;
-    }
-
-    .visitor-count {
-        position: fixed;
-        top: 5rem;
-        right: 1rem;
-        text-align: center;
-        width: 80px;
-        font-size: 0.9rem;
-        z-index: 50;
-    }
-
-    .settings-card {
-        width: 220px;
-        top: 5.5rem;
-        right: 0;
-    }
-
-    .color-dot {
-        width: 24px;
-        height: 24px;
-    }
-
-    .style-btn {
-        padding: 0.6rem 1rem;
-    }
-
-    .toggle-label {
-        width: 60px;
-        height: 24px;
-        font-size: 0.9rem;
-    }
-
-    .toggle-label .theme-icon {
-        font-size: 0.9rem;
-    }
-
-    .toggle-label::after {
-        width: 20px;
-        height: 20px;
-    }
-
-    #theme-switch:checked + .toggle-label::after {
-        transform: translateX(36px);
+@media (max-width: 768px) {
+    .custom-cursor {
+        display: none; /* Disable custom cursor on mobile */
     }
 
     .hamburger {
         display: flex;
     }
 
-    .nav {
+    nav {
         position: fixed;
         top: 0;
         right: 0;
@@ -836,7 +839,44 @@ body.light-theme .custom-cursor.hover {
     }
 
     .project-card {
-        padding: 1.8rem;
+        padding: 2.5rem; /* Increased padding for better touch area */
+    }
+
+    .project-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .project-card p {
+        font-size: 1.2rem;
+    }
+
+    .project-card a {
+        font-size: 1.1rem;
+        padding: 0.6rem 1.2rem; /* Larger tap area */
+    }
+
+    .settings-panel {
+        top: 1rem;
+        right: 1rem; /* Adjusted position */
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 0.5rem;
+    }
+
+    .settings-icon {
+        width: 45px; /* Larger buttons for touch */
+        height: 45px;
+        font-size: 1.5rem;
+    }
+
+    .settings-card,
+    .tools-card,
+    .languages-card,
+    .skills-card {
+        width: 100%;
+        max-width: 300px; /* Responsive width */
+        top: 60px; /* Position below buttons */
+        right: 0;
+        left: auto;
     }
 }
 
@@ -898,100 +938,51 @@ body.light-theme .custom-cursor.hover {
 
     .settings-panel {
         top: 0.5rem;
-        right: 1rem;
-        display: grid;
-        grid-template-columns: repeat(2, 32px);
-        grid-template-rows: repeat(2, 32px);
-        gap: 0.3rem;
-        padding: 0.2rem;
-        max-width: 70px;
-        z-index: 50;
+        right: 0.5rem; /* Closer to edge */
     }
 
     .settings-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-        z-index: 50;
+        width: 40px;
+        height: 40px;
+        font-size: 1.3rem;
     }
 
-    .visitor-count {
-        position: fixed;
-        top: 4.5rem;
-        right: 1rem;
-        text-align: center;
-        width: 70px;
-        font-size: 0.85rem;
-        z-index: 50;
-    }
-
-    .settings-card {
-        width: 200px;
-        padding: 1.2rem;
-        top: 5rem;
+    .settings-card,
+    .tools-card,
+    .languages-card,
+    .skills-card {
+        width: 90%;
+        max-width: 250px; /* Smaller max width */
+        top: 50px;
         right: 0;
     }
 
-    .settings-card h3 {
-        font-size: 1.2rem;
-    }
-
-    .settings-group label {
-        font-size: 0.9rem;
-    }
-
     .color-dot {
-        width: 22px;
-        height: 22px;
+        width: 28px; /* Larger for touch */
+        height: 28px;
     }
 
     .style-btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 0.9rem;
+        padding: 0.7rem 1.2rem; /* Larger tap area */
+        font-size: 1rem;
     }
 
     .toggle-label {
-        width: 60px;
-        height: 24px;
-        font-size: 0.9rem;
+        width: 70px;
+        height: 28px;
+        font-size: 1rem;
     }
 
     .toggle-label .theme-icon {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     .toggle-label::after {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
 
     #theme-switch:checked + .toggle-label::after {
-        transform: translateX(36px);
-    }
-}
-
-@media (max-width: 1200px) {
-    .container {
-        max-width: 1000px;
-    }
-
-    h1 {
-        font-size: 2.4rem;
-    }
-
-    .intro h2 {
-        font-size: 2.3rem;
-    }
-
-    section h2 {
-        font-size: 1.9rem;
-    }
-
-    .projects-container {
-        max-width: 800px;
-    }
-
-    .settings-panel {
-        right: 1rem;
+        transform: translateX(42px);
     }
 }
