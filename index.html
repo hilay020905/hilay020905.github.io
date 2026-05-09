@@ -168,6 +168,7 @@
     .exp-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:3.5rem; }
     .exp-card { padding:2.5rem; background:var(--bg2); border-left:3px solid var(--line); transition:border-color .3s,background .5s; }
     .exp-card:hover { border-left-color:var(--accent); }
+    .exp-card.featured { border-left-color:var(--accent); }
     .exp-role { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:.04em; margin-bottom:.4rem; }
     .exp-org { font-size:.85rem; color:var(--accent); margin-bottom:.3rem; }
     .exp-period { font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.15em; text-transform:uppercase; color:var(--muted); margin-bottom:1.2rem; }
@@ -266,7 +267,7 @@
     @media(max-width:400px){
       .hero-name { font-size:clamp(2.8rem,18vw,4.5rem); }
       .proj-tags,.pub-results { gap:.25rem; }
-      .proj-tag,.pub-metric { font-size:.52rem; padding:.2rem .45rem; }
+      .proj-tag,.pub-metric { font-size:.52rem; padding:.2rem .45px; }
     }
   </style>
 </head>
@@ -347,14 +348,14 @@
       <h2 class="about-title reveal">Building the<br>Hardware of<br>Tomorrow</h2>
       <p class="about-body reveal" style="transition-delay:.1s">I'm an <strong>Electrical Engineering undergraduate at IIT Tirupati</strong> specialising in VLSI design, computer architecture, and RTL development — designing the circuits and systems that make everything else possible.</p>
       <p class="about-body reveal" style="transition-delay:.2s">From <strong>RISC-V processor families to novel SRAM architectures and RL-optimised ASIC flows</strong>, I pursue research at the frontier of hardware performance, spanning RTL design, physical design, formal verification, and ML applied to chip design.</p>
-      <p class="about-body reveal" style="transition-delay:.3s"><strong>6 IEEE publications</strong> at venues including SOCC Heidelberg, ITC-India, and ICCCNT IIT Indore — two more under review at TVLSI and ITC-India 2026. Open to <strong>research internships and collaborations</strong> in computer architecture and VLSI.</p>
+      <p class="about-body reveal" style="transition-delay:.3s"><strong>7 IEEE publications</strong> at venues including SOCC Heidelberg, ITC-India, ICCCNT IIT Indore, ICCAD, and IEEE TPDS — three more under review. Open to <strong>research internships and collaborations</strong> in computer architecture and VLSI.</p>
     </div>
     <div class="about-right reveal" style="transition-delay:.2s">
       <div class="stats-grid">
         <div class="stat"><div class="stat-num">2 Years</div><div class="stat-lbl">Experience · IIT Tirupati</div></div>
-        <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">IEEE Publications</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-lbl">IEEE Publications</div></div>
         <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Hardware Projects</div></div>
-        <div class="stat"><div class="stat-num">2</div><div class="stat-lbl">Under Review</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-lbl">Under Review</div></div>
       </div>
       <div class="sec-label">Technical Stack</div>
       <div class="skills-wrap">
@@ -377,13 +378,14 @@
       <div class="proj-card reveal">
         <div class="proj-num">01</div>
         <div class="proj-body">
-          <div class="proj-date">Jan 2026 — Feb 2026</div>
+          <div class="proj-date">Jan 2026 — Apr 2026</div>
           <div class="proj-title">Monolithic 3D JSCAN Architecture with RL Optimization</div>
           <p class="proj-desc">Designed a <strong>tier-aware 3D Joint-Scan architecture</strong> for monolithic multi-tier ICs integrating MSS and PRAS scan structures with a Global Test Controller (GTC). Developed a <strong>PPO-based multi-agent RL framework</strong> to optimise flip-flop clustering during physical design. Achieved <strong>38% routing congestion reduction, 69% wirelength reduction, 87% peak test power reduction, and 20% area improvement</strong> on S-ISCAS89 benchmarks via complete RTL-to-GDS ASIC flow in Cadence Genus &amp; Innovus.</p>
           <div class="proj-tags"><span class="proj-tag">Verilog</span><span class="proj-tag">Python / PPO</span><span class="proj-tag">Cadence Genus</span><span class="proj-tag">Cadence Innovus</span><span class="proj-tag">OpenLane</span><span class="proj-tag">RTL-to-GDS</span></div>
         </div>
         <a href="https://github.com/hilay020905/Monolithic-3D-JSCAN-Architecture-IC" target="_blank" class="proj-link">GitHub ↗</a>
       </div>
+
       <div class="proj-card reveal" style="transition-delay:.08s">
         <div class="proj-num">02</div>
         <div class="proj-body">
@@ -394,6 +396,7 @@
         </div>
         <a href="https://github.com/hilay020905/SRAM12T" target="_blank" class="proj-link">GitHub ↗</a>
       </div>
+
       <div class="proj-card reveal" style="transition-delay:.14s">
         <div class="proj-num">03</div>
         <div class="proj-body">
@@ -404,6 +407,7 @@
         </div>
         <a href="https://github.com/hilay020905/RISC-V-SUITE" target="_blank" class="proj-link">GitHub ↗</a>
       </div>
+
       <div class="proj-card reveal" style="transition-delay:.2s">
         <div class="proj-num">04</div>
         <div class="proj-body">
@@ -414,6 +418,7 @@
         </div>
         <a href="https://github.com/hilay020905/UART" target="_blank" class="proj-link">GitHub ↗</a>
       </div>
+
       <div class="proj-card reveal" style="transition-delay:.26s">
         <div class="proj-num">05</div>
         <div class="proj-body">
@@ -431,12 +436,101 @@
   <section id="publications">
     <div class="sec-label reveal">IEEE Publications</div>
     <div class="pub-list">
-      <div class="pub-card reveal"><span class="pub-status review">Under Review</span><p class="pub-title">A Warp Adaptive Variable Engine for Reducing Operation Stalls on GPUs</p><p class="pub-venue">IEEE Transactions on Very Large Scale Integration (TVLSI)</p><p class="pub-authors">Hilay Patel, Mahesh A. Patel</p><div class="pub-results"><span class="pub-metric">100 MHz</span><span class="pub-metric">4.75 mW Power</span><span class="pub-metric">238×249 µm Die</span><span class="pub-metric">sky130A 130nm ASIC</span></div><a href="https://ieee-cas.org/publication/tvlsi" target="_blank" class="pub-link-a">View Journal ↗</a></div>
-      <div class="pub-card reveal" style="transition-delay:.05s"><span class="pub-status review">Under Review</span><p class="pub-title">RL-Driven 3D Clustering of JScan Architecture with Routing and Area Optimization in Chiplet SiP</p><p class="pub-venue">10th IEEE International Test Conference India 2026</p><p class="pub-authors">Hilay Patel, Naman Kalra, Jaynarayan Tudu</p><div class="pub-results"><span class="pub-metric">38.3% Congestion ↓</span><span class="pub-metric">87.9% Peak Power ↓</span><span class="pub-metric">20% Area ↓</span><span class="pub-metric">69.3% Wirelength ↓</span></div><a href="https://itctestweekindia.org/" target="_blank" class="pub-link-a">View Conference ↗</a></div>
-      <div class="pub-card reveal" style="transition-delay:.1s"><span class="pub-status published">Published</span><p class="pub-title">A Novel Design of Tri-directional Logic IMC Architectures using 12T SRAM Cells for Image Processing</p><p class="pub-venue">39th IEEE International System-on-Chip Conference — Heidelberg, Germany</p><p class="pub-authors">Hilay Patel, Mahesh A. Patel</p><div class="pub-results"><span class="pub-metric">1.77× Speedup</span><span class="pub-metric">56.38% Energy Savings</span><span class="pub-metric">130nm CMOS</span></div><a href="https://www.ieee-socc.org/" target="_blank" class="pub-link-a">View Conference ↗</a></div>
-      <div class="pub-card reveal" style="transition-delay:.15s"><span class="pub-status published">Published</span><p class="pub-title">Pioneering Robust UART Systems Leveraging Riccati Based Sampling for Superior Bit Error Rate Performance</p><p class="pub-venue">2nd IEEE ELEXCOM — IIT Dhanbad</p><p class="pub-authors">Hilay Patel, Madhav Tandon, Mahesh A. Patel</p><div class="pub-results"><span class="pub-metric">50% BER Reduction</span><span class="pub-metric">Riccati / Kalman Sampling</span></div><a href="https://ieeexplore.ieee.org/document/11451589" target="_blank" class="pub-link-a">View on IEEE Xplore ↗</a></div>
-      <div class="pub-card reveal" style="transition-delay:.2s"><span class="pub-status published">Published</span><p class="pub-title">Superscalar Processor Branch Prediction Implementation using Machine Learning for Enhancing Accuracy</p><p class="pub-venue">16th IEEE ICCCNT — IIT Indore</p><p class="pub-authors">Hilay Patel, Mahesh A. Patel</p><div class="pub-results"><span class="pub-metric">TAGE Predictor</span><span class="pub-metric">Highest Accuracy Across All Traces</span></div><a href="https://16icccnt.com/" target="_blank" class="pub-link-a">View Conference ↗</a></div>
-      <div class="pub-card reveal" style="transition-delay:.25s"><span class="pub-status published">Published</span><p class="pub-title">Mitigating Hazards in RISC-V Based Processor Architectures: A Micro Architectural Perspective</p><p class="pub-venue">16th IEEE ICCCNT — IIT Indore</p><p class="pub-authors">Hilay Patel, Mahesh A. Patel</p><div class="pub-results"><span class="pub-metric">4.52% Power Reduction</span><span class="pub-metric">4× Throughput Improvement</span><span class="pub-metric">Artix-7 FPGA</span></div><a href="https://16icccnt.com/" target="_blank" class="pub-link-a">View Conference ↗</a></div>
+
+      <!-- NEW: NFSCR — from resume, not previously on site -->
+      <div class="pub-card reveal">
+        <span class="pub-status review">Under Review</span>
+        <p class="pub-title">NFSCR: A Dual-Plane NoC Architecture for Eliminating CPU Starvation in Heterogeneous SoCs</p>
+        <p class="pub-venue">IEEE/ACM International Conference on Computer-Aided Design (ICCAD)</p>
+        <p class="pub-authors">Hilay Patel, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">61.5% CPU Latency ↓</span>
+          <span class="pub-metric">59% Throughput ↑</span>
+          <span class="pub-metric">18% Lower Power (23 mW)</span>
+          <span class="pub-metric">28nm · 10 Benchmarks</span>
+        </div>
+        <a href="https://iccad.com/" target="_blank" class="pub-link-a">View Conference ↗</a>
+      </div>
+
+      <!-- WAVE — venue corrected to IEEE TPDS per resume -->
+      <div class="pub-card reveal" style="transition-delay:.05s">
+        <span class="pub-status review">Under Review</span>
+        <p class="pub-title">A Warp Adaptive Variable Engine for Reducing Operation Stalls on GPUs</p>
+        <p class="pub-venue">IEEE Transactions on Parallel and Distributed Systems (TPDS)</p>
+        <p class="pub-authors">Hilay Patel, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">100 MHz</span>
+          <span class="pub-metric">4.75 mW Power</span>
+          <span class="pub-metric">238×249 µm Die</span>
+          <span class="pub-metric">sky130A 130nm ASIC</span>
+        </div>
+        <a href="https://ieee-cas.org/publication/tvlsi" target="_blank" class="pub-link-a">View Journal ↗</a>
+      </div>
+
+      <div class="pub-card reveal" style="transition-delay:.1s">
+        <span class="pub-status review">Under Review</span>
+        <p class="pub-title">RL-Driven 3D Clustering of JScan Architecture with Routing and Area Optimization in Chiplet SiP</p>
+        <p class="pub-venue">10th IEEE International Test Conference India 2026</p>
+        <p class="pub-authors">Hilay Patel, Naman Kalra, Jaynarayan Tudu</p>
+        <div class="pub-results">
+          <span class="pub-metric">38.3% Congestion ↓</span>
+          <span class="pub-metric">87.9% Peak Power ↓</span>
+          <span class="pub-metric">20% Area ↓</span>
+          <span class="pub-metric">69.3% Wirelength ↓</span>
+        </div>
+        <a href="https://itctestweekindia.org/" target="_blank" class="pub-link-a">View Conference ↗</a>
+      </div>
+
+      <div class="pub-card reveal" style="transition-delay:.15s">
+        <span class="pub-status published">Published</span>
+        <p class="pub-title">A Novel Design of Tri-directional Logic IMC Architectures using 12T SRAM Cells for Image Processing</p>
+        <p class="pub-venue">39th IEEE International System-on-Chip Conference — Heidelberg, Germany</p>
+        <p class="pub-authors">Hilay Patel, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">1.77× Speedup</span>
+          <span class="pub-metric">56.38% Energy Savings</span>
+          <span class="pub-metric">130nm CMOS</span>
+        </div>
+        <a href="https://www.ieee-socc.org/" target="_blank" class="pub-link-a">View Conference ↗</a>
+      </div>
+
+      <div class="pub-card reveal" style="transition-delay:.2s">
+        <span class="pub-status published">Published</span>
+        <p class="pub-title">Pioneering Robust UART Systems Leveraging Riccati Based Sampling for Superior Bit Error Rate Performance</p>
+        <p class="pub-venue">2nd IEEE ELEXCOM — IIT Dhanbad</p>
+        <p class="pub-authors">Hilay Patel, Madhav Tandon, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">50% BER Reduction</span>
+          <span class="pub-metric">Riccati / Kalman Sampling</span>
+        </div>
+        <a href="https://ieeexplore.ieee.org/document/11451589" target="_blank" class="pub-link-a">View on IEEE Xplore ↗</a>
+      </div>
+
+      <div class="pub-card reveal" style="transition-delay:.25s">
+        <span class="pub-status published">Published</span>
+        <p class="pub-title">Superscalar Processor Branch Prediction Implementation using Machine Learning for Enhancing Accuracy</p>
+        <p class="pub-venue">16th IEEE ICCCNT — IIT Indore</p>
+        <p class="pub-authors">Hilay Patel, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">TAGE Predictor</span>
+          <span class="pub-metric">Highest Accuracy Across All Traces</span>
+        </div>
+        <a href="https://16icccnt.com/" target="_blank" class="pub-link-a">View Conference ↗</a>
+      </div>
+
+      <div class="pub-card reveal" style="transition-delay:.3s">
+        <span class="pub-status published">Published</span>
+        <p class="pub-title">Mitigating Hazards in RISC-V Based Processor Architectures: A Micro Architectural Perspective</p>
+        <p class="pub-venue">16th IEEE ICCCNT — IIT Indore</p>
+        <p class="pub-authors">Hilay Patel, Mahesh A. Patel</p>
+        <div class="pub-results">
+          <span class="pub-metric">4.52% Power Reduction</span>
+          <span class="pub-metric">4× Throughput Improvement</span>
+          <span class="pub-metric">Artix-7 FPGA</span>
+        </div>
+        <a href="https://16icccnt.com/" target="_blank" class="pub-link-a">View Conference ↗</a>
+      </div>
+
     </div>
   </section>
 
@@ -454,8 +548,39 @@
   <section id="experience">
     <div class="sec-label reveal">Experience &amp; Activities</div>
     <div class="exp-grid">
-      <div class="exp-card reveal"><div class="exp-role">Event Manager</div><div class="exp-org">Artista — Art Club of IIT Tirupati</div><div class="exp-period">Jun 2024 — Jun 2025</div><ul class="exp-bullets"><li>Led planning and execution of multiple art exhibitions and workshops, attracting over 200 participants and enhancing campus cultural engagement.</li><li>Managed full event logistics including venue booking, material procurement, and promotion.</li></ul></div>
-      <div class="exp-card reveal" style="transition-delay:.1s"><div class="exp-role">Core Member</div><div class="exp-org">Gagan Vedhi — Astronomy Club of IIT Tirupati</div><div class="exp-period">Jun 2024 — Jun 2025</div><ul class="exp-bullets"><li>Organised regular stargazing sessions and astronomy workshops on celestial events and telescope operation.</li><li>Developed outreach materials to promote astronomy awareness across the student community.</li></ul></div>
+
+      <!-- NEW: IIT Bombay Research Internship — from resume -->
+      <div class="exp-card featured reveal">
+        <div class="exp-role">Research Intern</div>
+        <div class="exp-org">IIT Bombay — Trust Lab</div>
+        <div class="exp-period">May 2026 — Jul 2026</div>
+        <ul class="exp-bullets">
+          <li>Implemented and integrated a custom <strong>cryptographic accelerator into the lowRISC Ibex</strong>, extending the FPGA-targeted RISC-V SoC with hardware-assisted cryptographic execution.</li>
+          <li>Designed <strong>memory-mapped accelerator interfaces</strong> for control, status monitoring, and data transfer between the Ibex core and custom cryptographic hardware.</li>
+          <li>Automated the <strong>Xilinx Vivado FPGA design flow using TCL script</strong>, covering project setup, IP/source integration, synthesis, implementation, bitstream generation, and on-board validation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal" style="transition-delay:.1s">
+        <div class="exp-role">Event Manager</div>
+        <div class="exp-org">Artista — Art Club of IIT Tirupati</div>
+        <div class="exp-period">Jun 2024 — Jun 2025</div>
+        <ul class="exp-bullets">
+          <li>Led planning and execution of multiple art exhibitions and workshops, attracting over 200 participants and enhancing campus cultural engagement.</li>
+          <li>Managed full event logistics including venue booking, material procurement, and promotion.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card reveal" style="transition-delay:.2s">
+        <div class="exp-role">Core Member</div>
+        <div class="exp-org">Gagan Vedhi — Astronomy Club of IIT Tirupati</div>
+        <div class="exp-period">Jun 2024 — Jun 2025</div>
+        <ul class="exp-bullets">
+          <li>Organised regular stargazing sessions and astronomy workshops on celestial events and telescope operation.</li>
+          <li>Developed outreach materials to promote astronomy awareness across the student community.</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
@@ -570,7 +695,6 @@
   function tryAutoplay(){
     audio.play().then(()=>setUI(true)).catch(()=>{
       setUI(false);
-      // Wait for any user interaction then start
       const resume=()=>{
         audio.play().then(()=>setUI(true));
         ['click','touchstart','keydown'].forEach(ev=>document.removeEventListener(ev,resume));
