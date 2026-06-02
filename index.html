@@ -46,7 +46,6 @@
     .nav-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); display:inline-block; margin-left:.6rem; animation:pulse 2s infinite; }
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
 
-    /* Control row */
     .nav-controls { display:flex; align-items:center; gap:.45rem; }
     .ctrl-btn {
       display:flex; align-items:center; justify-content:center; gap:.35rem;
@@ -60,7 +59,6 @@
     .ctrl-btn.muted-state { border-color:var(--muted); color:var(--muted); opacity:.6; }
     @media(hover:none){.ctrl-btn{cursor:pointer}}
 
-    /* Waveform bars in music btn */
     .wave-bars { display:flex; align-items:center; gap:1.5px; height:11px; }
     .wave-bars b { width:2px; border-radius:2px; background:currentColor; height:3px; display:block; font-weight:normal; }
     .music-on .wave-bars b:nth-child(1){animation:wb .75s ease-in-out infinite}
@@ -68,12 +66,10 @@
     .music-on .wave-bars b:nth-child(3){animation:wb .75s ease-in-out infinite .36s}
     @keyframes wb{0%,100%{height:3px}50%{height:10px}}
 
-    /* Nav links */
     .nav-links { display:flex; gap:2.5rem; list-style:none; padding-top:.3rem; }
     .nav-links a { font-family:'DM Mono',monospace; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .3s; }
     .nav-links a:hover { color:var(--text); }
 
-    /* Sections */
     section { position:relative; z-index:10; }
 
     /* HERO */
@@ -99,7 +95,6 @@
     .marquee-sep { color:var(--accent); }
     @keyframes marqueeRun{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* Section label */
     .sec-label { font-family:'DM Mono',monospace; font-size:.68rem; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:1.2rem; margin-bottom:3.5rem; }
     .sec-label::after { content:''; flex:1; height:1px; background:var(--line); }
 
@@ -125,8 +120,12 @@
     .proj-grid { display:flex; flex-direction:column; gap:2px; margin-top:3.5rem; }
     .proj-card { position:relative; overflow:hidden; padding:3rem 3.5rem; background:var(--bg); border-left:3px solid transparent; transition:border-color .4s,background .4s; display:grid; grid-template-columns:auto 1fr auto; gap:3rem; align-items:start; }
     .proj-card:hover { border-left-color:var(--accent); background:var(--subtle); }
-    .proj-num { font-family:'Bebas Neue',sans-serif; font-size:3rem; line-height:1; color:rgba(230,50,0,.15); transition:color .4s; }
-    .proj-card:hover .proj-num { color:var(--accent); }
+
+    /* ── KEY FIX: numbers always full accent red, no dimming ── */
+    .proj-num { font-family:'Bebas Neue',sans-serif; font-size:3rem; line-height:1; color:var(--accent); transition:opacity .4s; }
+    .proj-card:hover .proj-num { opacity:1; }
+    /* ───────────────────────────────────────────────────────── */
+
     .proj-date { font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.15em; color:var(--muted); margin-bottom:.8rem; }
     .proj-title { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; letter-spacing:.04em; margin-bottom:.8rem; line-height:1; }
     .proj-desc { font-size:.9rem; line-height:1.75; color:var(--muted); max-width:700px; margin-bottom:1rem; }
@@ -201,19 +200,16 @@
     footer { position:relative; z-index:10; padding:2rem 3.5rem; border-top:1px solid var(--line); background:var(--bg); display:flex; justify-content:space-between; align-items:center; transition:background .5s,border-color .5s; }
     .footer-mono { font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.12em; color:var(--muted); }
 
-    /* Animations */
     @keyframes riseUp{from{opacity:0;transform:translateY(2.5rem)}to{opacity:1;transform:translateY(0)}}
     .reveal { opacity:0; transform:translateY(2rem); transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
     .reveal.vis { opacity:1; transform:translateY(0); }
 
-    /* ══ MOBILE ══ */
     @media(max-width:768px){
       nav { padding:1.2rem 1.2rem; }
       .nav-links { display:none; }
       .nav-logo { font-size:1.25rem; }
       .ctrl-btn { font-size:.52rem; padding:.28rem .6rem; gap:.28rem; }
       .wave-bars { height:9px; }
-
       #hero { padding:0 1.2rem 4rem; min-height:100svh; }
       .hero-label { font-size:.55rem; letter-spacing:.14em; }
       .hero-name { font-size:clamp(3.2rem,17vw,6rem); }
@@ -221,7 +217,6 @@
       .hero-sub-bar { width:2.5rem; }
       .hero-sub-text { font-size:.8rem; }
       .hero-scroll { display:none; }
-
       #about { grid-template-columns:1fr; gap:2.5rem; padding:5rem 1.2rem 3.5rem; }
       .about-right { padding-top:0; }
       .about-title { font-size:clamp(2rem,9vw,3.5rem); }
@@ -230,34 +225,27 @@
       .stat-num { font-size:2.8rem; }
       .stat-lbl { font-size:.6rem; }
       .stats-grid { margin-bottom:2.5rem; }
-
       #projects { padding:4rem 1.2rem; }
       .proj-card { grid-template-columns:1fr; gap:.8rem; padding:1.6rem 1.2rem; }
       .proj-num { font-size:2rem; }
       .proj-title { font-size:1.3rem; }
       .proj-desc { font-size:.85rem; }
       .proj-link { display:inline-block; margin-top:.8rem; }
-
       #publications { padding:4rem 1.2rem; }
       .pub-card { padding:1.6rem 1.2rem; }
       .pub-title { font-size:.92rem; }
       .pub-metric { font-size:.55rem; padding:.2rem .5rem; }
-
       #philosophy { grid-template-columns:1fr; gap:2rem; padding:4rem 1.2rem; }
-
       #experience { padding:4rem 1.2rem; }
       .exp-grid { grid-template-columns:1fr; }
       .exp-card { padding:1.6rem 1.2rem; }
-
       #achievements { padding:4rem 1.2rem; }
       .ach-grid { grid-template-columns:1fr; }
       .ach-card { padding:1.8rem 1.2rem; }
-
       #contact { padding:5rem 1.2rem 7rem; }
       .contact-cta { font-size:clamp(2.5rem,12vw,5rem); margin-bottom:2rem; }
       .contact-btn { font-size:.6rem; padding:.7rem 1.2rem; }
       .socials { gap:1.5rem; }
-
       footer { padding:1.4rem 1.2rem; flex-direction:column; gap:.5rem; text-align:center; }
       .sec-label { margin-bottom:1.8rem; font-size:.6rem; }
       .skills-wrap { gap:.35rem; }
@@ -281,7 +269,6 @@
   <div id="cur-ring"></div>
   <canvas id="bg-canvas"></canvas>
 
-  <!-- NAV -->
   <nav>
     <div class="nav-left">
       <a href="#" class="nav-logo">HP<span class="nav-dot"></span></a>
@@ -304,7 +291,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-inner">
       <p class="hero-label">IIT Tirupati &nbsp;·&nbsp; BTech Electrical Engineering &nbsp;·&nbsp; Open to Research Collaborations</p>
@@ -317,7 +303,6 @@
     <div class="hero-scroll"><span>Scroll</span><div class="scroll-bar"></div></div>
   </section>
 
-  <!-- MARQUEE -->
   <div class="marquee-wrap">
     <div class="marquee-track" aria-hidden="true">
       <span class="marquee-item">Verilog</span><span class="marquee-item marquee-sep">✦</span>
@@ -341,7 +326,6 @@
     </div>
   </div>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="about-left">
       <div class="sec-label">About Me</div>
@@ -371,7 +355,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="sec-label reveal">Selected Projects</div>
     <div class="proj-grid">
@@ -432,12 +415,9 @@
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
   <section id="publications">
     <div class="sec-label reveal">IEEE Publications</div>
     <div class="pub-list">
-
-      <!-- NEW: NFSCR — from resume, not previously on site -->
       <div class="pub-card reveal">
         <span class="pub-status review">Under Review</span>
         <p class="pub-title">NFSCR: A Dual-Plane NoC Architecture for Eliminating CPU Starvation in Heterogeneous SoCs</p>
@@ -452,7 +432,6 @@
         <a href="https://iccad.com/" target="_blank" class="pub-link-a">View Conference ↗</a>
       </div>
 
-      <!-- WAVE — venue corrected to IEEE TPDS per resume -->
       <div class="pub-card reveal" style="transition-delay:.05s">
         <span class="pub-status review">Under Review</span>
         <p class="pub-title">A Warp Adaptive Variable Engine for Reducing Operation Stalls on GPUs</p>
@@ -530,11 +509,9 @@
         </div>
         <a href="https://16icccnt.com/" target="_blank" class="pub-link-a">View Conference ↗</a>
       </div>
-
     </div>
   </section>
 
-  <!-- PHILOSOPHY -->
   <section id="philosophy">
     <div class="philo-quote reveal">Hardware<br>Runs<br><em>Everything</em></div>
     <div class="philo-items">
@@ -544,12 +521,9 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section id="experience">
     <div class="sec-label reveal">Experience &amp; Activities</div>
     <div class="exp-grid">
-
-      <!-- NEW: IIT Bombay Research Internship — from resume -->
       <div class="exp-card reveal" style="transition-delay:.1s">
         <div class="exp-role">Research Intern</div>
         <div class="exp-org">IIT Bombay — Trust Lab</div>
@@ -580,11 +554,9 @@
           <li>Developed outreach materials to promote astronomy awareness across the student community.</li>
         </ul>
       </div>
-
     </div>
   </section>
 
-  <!-- ACHIEVEMENTS -->
   <section id="achievements">
     <div class="sec-label reveal">Achievements &amp; Certifications</div>
     <div class="ach-grid">
@@ -604,7 +576,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="sec-label">Get In Touch</div>
     <h2 class="contact-cta reveal">Let's Build<br><em>Great Chips</em><br>Together</h2>
@@ -619,14 +590,12 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-mono">© 2025 Hilay Patel &nbsp;·&nbsp; IIT Tirupati</div>
     <div class="footer-mono">VLSI | Computer Architecture | RTL &amp; Verification</div>
   </footer>
 
   <script>
-  /* CURSOR */
   const dot=document.getElementById('cur-dot'),ring=document.getElementById('cur-ring');
   let mx=-200,my=-200,rx=-200,ry=-200;
   document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
@@ -636,7 +605,6 @@
   });
   (function cl(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(cl);})();
 
-  /* CANVAS */
   const cvs=document.getElementById('bg-canvas'),ctx=cvs.getContext('2d');
   let W,H,pts=[];
   const mouse={x:null,y:null};
@@ -665,11 +633,9 @@
     requestAnimationFrame(loop);
   })();
 
-  /* SCROLL REVEAL */
   const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.08});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  /* THEME */
   const themeBtn=document.getElementById('theme-btn'),themeIcon=document.getElementById('theme-icon');
   let isLight=false;
   themeBtn.addEventListener('click',()=>{
@@ -678,7 +644,6 @@
     themeIcon.textContent=isLight?'☾':'☀';
   });
 
-  /* MUSIC — autoplay with graceful gesture fallback */
   const audio=document.getElementById('bg-music');
   const musicBtn=document.getElementById('music-btn');
   const musicLabel=document.getElementById('music-label');
