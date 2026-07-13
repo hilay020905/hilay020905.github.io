@@ -104,35 +104,63 @@
   }
 
   /* date block */
-  .datecard{
-    display:inline-flex;
+  .plaindate{
+    display:flex;
     flex-direction:column;
     align-items:center;
-    padding:26px 54px;
-    border:1px solid var(--line);
-    border-radius:4px;
-    background:rgba(255,255,255,0.5);
-    position:relative;
+    gap:6px;
   }
-  .datecard .month{
-    font-family:'Jost'; letter-spacing:0.35em; text-transform:uppercase;
-    font-size:13px; color:var(--mauve-deep); font-weight:500;
-  }
-  .datecard .day{
+  .plaindate .pd-day{
     font-family:'Marcellus';
-    font-size:clamp(64px,10vw,96px);
+    font-size:clamp(22px,3.4vw,28px);
+    color:var(--mauve-deep);
+  }
+  .plaindate .pd-time{
+    font-size:13px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:#6b4453;
+    font-weight:500;
+  }
+
+  .countdown{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:14px;
+    margin:36px auto 0;
+  }
+  .cd-item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-width:64px;
+  }
+  .cd-num{
+    font-family:'Marcellus';
+    font-size:clamp(30px,5vw,42px);
     color:var(--mauve);
     line-height:1;
-    margin:4px 0;
+    font-variant-numeric:tabular-nums;
   }
-  .datecard .meta{
-    display:flex; gap:18px; margin-top:8px;
-    font-size:14px; letter-spacing:0.08em; text-transform:uppercase;
-    color:#6b4453; font-weight:500;
+  .cd-label{
+    margin-top:6px;
+    font-size:10.5px;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    color:#8a6472;
   }
-  .datecard .meta span{position:relative; padding:0 0 2px;}
-  .datecard .meta span:not(:last-child)::after{
-    content:"·"; position:absolute; right:-11px; color:var(--gold);
+  .cd-sep{
+    font-family:'Marcellus';
+    font-size:clamp(24px,4vw,34px);
+    color:var(--gold);
+    opacity:0.6;
+    transform:translateY(-8px);
+  }
+  @media (max-width:560px){
+    .countdown{ gap:8px; }
+    .cd-item{ min-width:52px; }
+    .cd-sep{ display:none; }
   }
 
   /* ---------- SECTION FRAME ---------- */
@@ -382,9 +410,18 @@
   }
 
   @media (max-width:600px){
-    .tl-item{grid-template-columns:96px 24px 1fr; gap:0 12px;}
-    .timeline::before{left:120px;}
-    .datecard{padding:22px 34px;}
+    .tl-item{grid-template-columns:22px 1fr; gap:6px 12px; padding-bottom:40px;}
+    .tl-time{
+      grid-column:1 / 3;
+      text-align:left;
+      font-size:14px;
+      padding-top:0;
+      margin-bottom:2px;
+    }
+    .tl-node{ grid-row:2; grid-column:1; padding-top:3px; justify-content:flex-start; }
+    .tl-content{ grid-row:2; grid-column:2; }
+    .timeline::before{ left:11px; }
+    .datecard{padding:26px 20px;}
   }
 </style>
 </head>
@@ -408,10 +445,19 @@
 
     <div class="divider"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
 
-    <div class="datecard">
-      <span class="month">July · 2026</span>
-      <span class="day">16</span>
-      <span class="meta"><span>Thursday</span><span>7:00 AM Onward</span></span>
+    <div class="plaindate">
+      <span class="pd-day">Thursday, 16th July 2026</span>
+      <span class="pd-time">6:30 AM Onward</span>
+    </div>
+
+    <div class="countdown" id="countdown">
+      <div class="cd-item"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-item"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seconds</span></div>
     </div>
   </header>
 
@@ -533,5 +579,47 @@
   </footer>
 
 </div>
+<script>
+  (function(){
+    var target = new Date("2026-07-16T06:30:00+05:30").getTime();
+    var elDays = document.getElementById('cd-days');
+    var elHours = document.getElementById('cd-hours');
+    var elMins = document.getElementById('cd-mins');
+    var elSecs = document.getElementById('cd-secs');
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+
+    function tick(){
+      var now = Date.now();
+      var diff = target - now;
+      if(diff <= 0){
+        elDays.textContent = '00'; elHours.textContent = '00';
+        elMins.textContent = '00'; elSecs.textContent = '00';
+        var label = document.querySelector('.countdown');
+        if(label && !label.dataset.done){
+          label.dataset.done = '1';
+          var msg = document.createElement('div');
+          msg.textContent = "It's here!";
+          msg.style.fontFamily = "'Marcellus', serif";
+          msg.style.fontSize = '20px';
+          msg.style.color = 'var(--mauve-deep)';
+          msg.style.width = '100%';
+          msg.style.textAlign = 'center';
+          label.appendChild(msg);
+        }
+        return;
+      }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      elDays.textContent = pad(d);
+      elHours.textContent = pad(h);
+      elMins.textContent = pad(m);
+      elSecs.textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
 </body>
 </html>
