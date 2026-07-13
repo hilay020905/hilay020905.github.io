@@ -162,7 +162,7 @@
   .timeline::before{
     content:"";
     position:absolute;
-    left:104px;
+    left:167px;
     top:8px; bottom:8px;
     width:1px;
     background:linear-gradient(var(--rose), var(--gold));
@@ -170,7 +170,7 @@
   }
   .tl-item{
     display:grid;
-    grid-template-columns:104px 34px 1fr;
+    grid-template-columns:128px 34px 1fr;
     gap:0 22px;
     align-items:flex-start;
     padding-bottom:46px;
@@ -178,14 +178,15 @@
   .tl-item:last-child{padding-bottom:0;}
   .tl-time{
     font-family:'Marcellus';
-    font-size:17px;
+    font-size:15.5px;
     color:var(--mauve);
     text-align:right;
     padding-top:2px;
+    padding-right:2px;
     white-space:nowrap;
   }
   .tl-node{
-    display:flex; justify-content:center; padding-top:4px;
+    display:flex; justify-content:center; align-items:flex-start; padding-top:5px;
   }
   .tl-node span{
     width:15px; height:15px;
@@ -232,14 +233,90 @@
     overflow:hidden;
     display:flex; flex-direction:column;
     box-shadow:var(--shadow);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .loc-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 26px 48px -20px rgba(58,30,42,0.42);
   }
   .loc-map{
+    position:relative;
     width:100%;
-    height:230px;
-    border:0;
-    filter:saturate(0.9);
+    height:210px;
     display:block;
+    overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(201,126,156,0.16), transparent 55%),
+      radial-gradient(circle at 80% 75%, rgba(185,136,76,0.14), transparent 50%),
+      linear-gradient(135deg, #f3e3ea 0%, #f6ecdf 100%);
   }
+  .loc-map svg{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+  }
+  .loc-map .pin-wrap{
+    position:absolute;
+    left:50%; top:50%;
+    transform:translate(-50%,-92%);
+    display:flex; flex-direction:column; align-items:center;
+    z-index:2;
+  }
+  .loc-map .pin{
+    width:34px; height:34px;
+    border-radius:50% 50% 50% 0;
+    background:var(--mauve-deep);
+    transform:rotate(-45deg);
+    box-shadow:0 8px 18px -4px rgba(58,30,42,0.45);
+    display:flex; align-items:center; justify-content:center;
+    animation:pinDrop 1.6s ease-in-out infinite;
+  }
+  .loc-map .pin::after{
+    content:"";
+    width:11px; height:11px;
+    border-radius:50%;
+    background:var(--ivory);
+    transform:rotate(45deg);
+  }
+  .loc-map .pin-shadow{
+    width:20px; height:6px;
+    margin-top:6px;
+    border-radius:50%;
+    background:rgba(58,30,42,0.25);
+    filter:blur(1px);
+  }
+  @keyframes pinDrop{
+    0%,100%{ transform:translateY(0) rotate(-45deg); }
+    50%{ transform:translateY(-6px) rotate(-45deg); }
+  }
+  .loc-map .coords{
+    position:absolute;
+    bottom:12px; left:14px;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--mauve-deep);
+    background:rgba(255,255,255,0.6);
+    padding:4px 10px;
+    border-radius:20px;
+    z-index:2;
+  }
+  .loc-map .tap-hint{
+    position:absolute;
+    top:12px; right:14px;
+    font-size:10.5px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--mauve-deep);
+    background:rgba(255,255,255,0.6);
+    padding:5px 11px;
+    border-radius:20px;
+    z-index:2;
+    opacity:0;
+    transform:translateY(-4px);
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  a.loc-map:hover .tap-hint{ opacity:1; transform:translateY(0); }
+  a.loc-map:hover .pin{ background:var(--mauve); }
+  a.loc-map{ cursor:pointer; text-decoration:none; }
   .loc-body{
     padding:26px 26px 28px;
     flex:1;
@@ -305,8 +382,8 @@
   }
 
   @media (max-width:600px){
-    .tl-item{grid-template-columns:78px 24px 1fr; gap:0 12px;}
-    .timeline::before{left:78px;}
+    .tl-item{grid-template-columns:96px 24px 1fr; gap:0 12px;}
+    .timeline::before{left:120px;}
     .datecard{padding:22px 34px;}
   }
 </style>
@@ -389,9 +466,16 @@
 
       <!-- House -->
       <div class="loc-card">
-        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=72.454474%2C23.088488%2C72.474474%2C23.108488&layer=mapnik&marker=23.098488%2C72.464474">
-        </iframe>
+        <a class="loc-map" href="https://www.google.com/maps/dir/?api=1&destination=23.098488,72.464474&travelmode=driving" aria-label="Open directions to the ceremony venue">
+          <svg viewBox="0 0 400 210" preserveAspectRatio="none">
+            <path d="M0 150 C 80 120, 140 180, 220 140 S 340 90, 400 130" stroke="#c9a4b4" stroke-width="2" fill="none" opacity="0.55"/>
+            <path d="M0 60 C 100 40, 160 90, 260 60 S 360 30, 400 55" stroke="#d8bb92" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4 6"/>
+            <path d="M40 0 C 60 60, 30 120, 60 210" stroke="#c9a4b4" stroke-width="1.5" fill="none" opacity="0.4"/>
+          </svg>
+          <span class="pin-wrap"><span class="pin"></span><span class="pin-shadow"></span></span>
+          <span class="coords">23.0985° N, 72.4645° E</span>
+          <span class="tap-hint">Tap to Navigate</span>
+        </a>
         <div class="loc-body">
           <span class="loc-kicker">Ceremony Venue</span>
           <h3>61, Divine Bunglow</h3>
@@ -407,9 +491,16 @@
 
       <!-- Lunch -->
       <div class="loc-card">
-        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=72.469029%2C23.030479%2C72.489029%2C23.050479&layer=mapnik&marker=23.040479%2C72.479029">
-        </iframe>
+        <a class="loc-map" href="https://www.google.com/maps/dir/?api=1&destination=23.040479,72.479029&travelmode=driving" aria-label="Open directions to the lunch venue">
+          <svg viewBox="0 0 400 210" preserveAspectRatio="none">
+            <path d="M0 170 C 90 140, 150 190, 230 150 S 350 110, 400 150" stroke="#c9a4b4" stroke-width="2" fill="none" opacity="0.55"/>
+            <path d="M0 50 C 110 70, 170 20, 270 50 S 370 80, 400 45" stroke="#d8bb92" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4 6"/>
+            <path d="M360 0 C 340 60, 370 120, 340 210" stroke="#c9a4b4" stroke-width="1.5" fill="none" opacity="0.4"/>
+          </svg>
+          <span class="pin-wrap"><span class="pin"></span><span class="pin-shadow"></span></span>
+          <span class="coords">23.0405° N, 72.4790° E</span>
+          <span class="tap-hint">Tap to Navigate</span>
+        </a>
         <div class="loc-body">
           <span class="loc-kicker">Lunch Venue</span>
           <h3>The Raj Thaal &amp; Restaurant</h3>
