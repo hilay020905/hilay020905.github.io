@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griha Pravesh — Divine Bunglow 61</title>
+<meta name="description" content="Join us for the Griha Pravesh ceremony of our new home — Thursday, July 16, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FBF4EC;
+    --ivory-deep:#F3E7DC;
+    --plum:#3A1E2A;
+    --mauve:#9C4468;
+    --mauve-deep:#7A3352;
+    --rose:#C97E9C;
+    --gold:#B9884C;
+    --blush:#F5E2E7;
+    --line: rgba(122,51,82,0.22);
+    --shadow: 0 18px 40px -20px rgba(58,30,42,0.35);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ivory);
+    color:var(--plum);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(201,126,156,0.10), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(185,136,76,0.10), transparent 40%);
+    pointer-events:none;
+    z-index:0;
+  }
+  .wrap{max-width:1000px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+
+  h1,h2,h3{font-family:'Marcellus', serif; font-weight:400; letter-spacing:0.02em;}
+  .eyebrow{
+    font-family:'Jost', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.32em;
+    font-size:12px;
+    color:var(--mauve-deep);
+    font-weight:500;
+  }
+
+  /* ---------- decorative arch shared ---------- */
+  .arch-line{
+    position:relative;
+  }
+  .arch-line svg{display:block; width:100%; height:auto;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:64px 0 40px;
+    text-align:center;
+    position:relative;
+  }
+  .motif{
+    width:74px; height:74px;
+    margin:0 auto 22px;
+    color:var(--gold);
+  }
+  .hero .eyebrow{display:block; margin-bottom:18px;}
+  .hero h1{
+    font-size:clamp(40px, 7vw, 68px);
+    color:var(--mauve-deep);
+    line-height:1.08;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-family:'Cormorant Garamond', serif;
+    display:block;
+    font-size:0.42em;
+    color:var(--gold);
+    margin-top:10px;
+    letter-spacing:0.06em;
+  }
+  .hero .sub{
+    max-width:520px;
+    margin:22px auto 0;
+    font-size:16.5px;
+    color:#5b3a48;
+  }
+
+  .divider{
+    display:flex; align-items:center; gap:14px;
+    justify-content:center;
+    margin:34px auto;
+    max-width:340px;
+  }
+  .divider .l{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--rose));}
+  .divider .r{flex:1; height:1px; background:linear-gradient(90deg, var(--rose), transparent);}
+  .divider .dot{
+    width:7px; height:7px; border-radius:50%;
+    background:var(--gold); transform:rotate(45deg);
+  }
+
+  /* date block */
+  .datecard{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    padding:26px 54px;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:rgba(255,255,255,0.5);
+    position:relative;
+  }
+  .datecard .month{
+    font-family:'Jost'; letter-spacing:0.35em; text-transform:uppercase;
+    font-size:13px; color:var(--mauve-deep); font-weight:500;
+  }
+  .datecard .day{
+    font-family:'Marcellus';
+    font-size:clamp(64px,10vw,96px);
+    color:var(--mauve);
+    line-height:1;
+    margin:4px 0;
+  }
+  .datecard .meta{
+    display:flex; gap:18px; margin-top:8px;
+    font-size:14px; letter-spacing:0.08em; text-transform:uppercase;
+    color:#6b4453; font-weight:500;
+  }
+  .datecard .meta span{position:relative; padding:0 0 2px;}
+  .datecard .meta span:not(:last-child)::after{
+    content:"·"; position:absolute; right:-11px; color:var(--gold);
+  }
+
+  /* ---------- SECTION FRAME ---------- */
+  section{
+    position:relative;
+    padding:70px 0;
+  }
+  section + section{
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:48px;
+  }
+  .section-head h2{
+    font-size:clamp(30px,4.4vw,42px);
+    color:var(--mauve-deep);
+    margin-top:12px;
+  }
+
+  /* ---------- SCHEDULE ---------- */
+  .timeline{
+    max-width:640px;
+    margin:0 auto;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:104px;
+    top:8px; bottom:8px;
+    width:1px;
+    background:linear-gradient(var(--rose), var(--gold));
+    opacity:0.5;
+  }
+  .tl-item{
+    display:grid;
+    grid-template-columns:104px 34px 1fr;
+    gap:0 22px;
+    align-items:flex-start;
+    padding-bottom:46px;
+  }
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-time{
+    font-family:'Marcellus';
+    font-size:17px;
+    color:var(--mauve);
+    text-align:right;
+    padding-top:2px;
+    white-space:nowrap;
+  }
+  .tl-node{
+    display:flex; justify-content:center; padding-top:4px;
+  }
+  .tl-node span{
+    width:15px; height:15px;
+    border-radius:50%;
+    background:var(--ivory);
+    border:2px solid var(--gold);
+    display:block;
+    position:relative; z-index:2;
+  }
+  .tl-content h3{
+    font-size:22px;
+    color:var(--plum);
+    margin-bottom:6px;
+  }
+  .tl-content p{
+    font-size:14.5px;
+    color:#6b4a58;
+    max-width:380px;
+  }
+  .tl-content .tag{
+    display:inline-block;
+    margin-top:10px;
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid rgba(185,136,76,0.4);
+    padding:4px 10px;
+    border-radius:20px;
+  }
+
+  /* ---------- LOCATIONS ---------- */
+  .loc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+  }
+  @media (max-width:760px){ .loc-grid{grid-template-columns:1fr;} }
+
+  .loc-card{
+    background:rgba(255,255,255,0.55);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    display:flex; flex-direction:column;
+    box-shadow:var(--shadow);
+  }
+  .loc-map{
+    width:100%;
+    height:230px;
+    border:0;
+    filter:saturate(0.9);
+    display:block;
+  }
+  .loc-body{
+    padding:26px 26px 28px;
+    flex:1;
+    display:flex; flex-direction:column;
+  }
+  .loc-kicker{
+    font-size:11px; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--mauve); font-weight:500;
+  }
+  .loc-body h3{
+    font-size:24px;
+    margin:8px 0 6px;
+    color:var(--plum);
+  }
+  .loc-addr{
+    font-size:14.5px;
+    color:#6b4a58;
+    margin-bottom:20px;
+    flex:1;
+  }
+  .btn-directions{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:var(--mauve-deep);
+    color:#fff;
+    text-decoration:none;
+    padding:13px 22px;
+    border-radius:3px;
+    font-family:'Jost'; font-weight:500;
+    font-size:13.5px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn-directions:hover{ background:var(--mauve); transform:translateY(-1px); }
+  .btn-directions svg{width:15px; height:15px;}
+  .loc-hint{
+    font-size:12px;
+    color:#8a6472;
+    margin-top:10px;
+    font-style:italic;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding:56px 0 70px;
+  }
+  footer .motif{width:46px; height:46px; margin-bottom:16px;}
+  footer h3{
+    font-size:26px; color:var(--mauve-deep); margin-bottom:8px;
+  }
+  footer p{ color:#6b4a58; font-size:14.5px; max-width:420px; margin:0 auto; }
+  footer .names{
+    margin-top:26px;
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--plum);
+    line-height:1.9;
+  }
+
+  @media (max-width:600px){
+    .tl-item{grid-template-columns:78px 24px 1fr; gap:0 12px;}
+    .timeline::before{left:78px;}
+    .datecard{padding:22px 34px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <svg class="motif" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 8C50 8 30 22 30 42C30 56 39 66 50 66C61 66 70 56 70 42C70 22 50 8 50 8Z" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="50" cy="42" r="6" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M50 66V80" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M36 92C36 92 42 80 50 80C58 80 64 92 64 92" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M18 42C18 42 24 34 30 36" stroke="currentColor" stroke-width="1.2"/>
+      <path d="M82 42C82 42 76 34 70 36" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    <span class="eyebrow">Join us as we begin a new chapter</span>
+    <h1>Griha Pravesh<em>of Our New Home</em></h1>
+    <p class="sub">We warmly invite you to celebrate the housewarming ceremony of our home at Divine Bunglow, Supercity, with prayers, ritual, and a shared meal.</p>
+
+    <div class="divider"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
+
+    <div class="datecard">
+      <span class="month">July · 2026</span>
+      <span class="day">16</span>
+      <span class="meta"><span>Thursday</span><span>7:00 AM Onward</span></span>
+    </div>
+  </header>
+
+  <!-- SCHEDULE -->
+  <section id="schedule">
+    <div class="section-head">
+      <span class="eyebrow">Order of the Day</span>
+      <h2>Schedule</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">6:30 AM</div>
+        <div class="tl-node"><span></span></div>
+        <div class="tl-content">
+          <h3>Griha Pravesh</h3>
+          <p>The auspicious entry ceremony into our new home begins. We kindly request guests to arrive a little before time.</p>
+          <span class="tag">Ceremony Begins</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">7:30 – 10:00 AM</div>
+        <div class="tl-node"><span></span></div>
+        <div class="tl-content">
+          <h3>Gayatri Yagna</h3>
+          <p>A sacred Vedic fire ritual invoking blessings of prosperity, peace and good health for the home and family.</p>
+          <span class="tag">Sacred Ritual</span>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-time">12:00 PM Onward</div>
+        <div class="tl-node"><span></span></div>
+        <div class="tl-content">
+          <h3>Lunch</h3>
+          <p>Join us for a festive meal to celebrate together, served at our lunch venue — location and directions below.</p>
+          <span class="tag">Followed By Lunch</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATIONS -->
+  <section id="locations">
+    <div class="section-head">
+      <span class="eyebrow">Getting There</span>
+      <h2>Venues &amp; Directions</h2>
+    </div>
+
+    <div class="loc-grid">
+
+      <!-- House -->
+      <div class="loc-card">
+        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=72.454474%2C23.088488%2C72.474474%2C23.108488&layer=mapnik&marker=23.098488%2C72.464474">
+        </iframe>
+        <div class="loc-body">
+          <span class="loc-kicker">Ceremony Venue</span>
+          <h3>61, Divine Bunglow</h3>
+          <p class="loc-addr">Supercity, Bhadaj, Ahmedabad – 382721<br>Griha Pravesh &amp; Yagna held here from 6:30 AM.</p>
+          <a class="btn-directions"
+             href="https://www.google.com/maps/dir/?api=1&destination=23.098488,72.464474&travelmode=driving">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Get Directions
+          </a>
+          <span class="loc-hint">Opens Google Maps with live distance &amp; drive time from your location.</span>
+        </div>
+      </div>
+
+      <!-- Lunch -->
+      <div class="loc-card">
+        <iframe class="loc-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=72.469029%2C23.030479%2C72.489029%2C23.050479&layer=mapnik&marker=23.040479%2C72.479029">
+        </iframe>
+        <div class="loc-body">
+          <span class="loc-kicker">Lunch Venue</span>
+          <h3>The Raj Thaal &amp; Restaurant</h3>
+          <p class="loc-addr">Ahmedabad, Gujarat<br>Join us here from 12:00 PM onward for lunch.</p>
+          <a class="btn-directions"
+             href="https://www.google.com/maps/dir/?api=1&destination=23.040479,72.479029&travelmode=driving">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
+            Get Directions
+          </a>
+          <span class="loc-hint">Opens Google Maps with live distance &amp; drive time from your location.</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <svg class="motif" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:var(--gold); margin:0 auto;">
+      <path d="M50 8C50 8 30 22 30 42C30 56 39 66 50 66C61 66 70 56 70 42C70 22 50 8 50 8Z" stroke="currentColor" stroke-width="1.4"/>
+      <circle cx="50" cy="42" r="6" stroke="currentColor" stroke-width="1.4"/>
+    </svg>
+    <h3>With Blessings &amp; Warm Regards</h3>
+    <p>We look forward to welcoming you into our home and beginning this new journey together.</p>
+    <div class="names">
+      Dr. Amrutbhai S. Patel &nbsp;·&nbsp; Smt. Shantaben A. Patel<br>
+      Dr. Mahesh A. Patel &nbsp;·&nbsp; Smt. Daxaben M. Patel<br>
+      Kahaan M. Patel &nbsp;·&nbsp; Hilay M. Patel
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
