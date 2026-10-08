@@ -1,620 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Griha Pravesh — Divine Bunglow 61</title>
-<meta name="description" content="Join us for the Griha Pravesh ceremony of our new home — Thursday, July 16, 2026.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<html lang="en" data-t="candy"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Journal">
+<title>My Journal</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
 <style>
-  :root{
-    --ivory:#FBF4EC;
-    --ivory-deep:#F3E7DC;
-    --plum:#3A1E2A;
-    --mauve:#9C4468;
-    --mauve-deep:#7A3352;
-    --rose:#C97E9C;
-    --gold:#B9884C;
-    --blush:#F5E2E7;
-    --line: rgba(122,51,82,0.22);
-    --shadow: 0 18px 40px -20px rgba(58,30,42,0.35);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{
-    background:var(--ivory);
-    color:var(--plum);
-    font-family:'Jost', sans-serif;
-    font-weight:300;
-    line-height:1.6;
-    overflow-x:hidden;
-  }
-  body::before{
-    content:"";
-    position:fixed; inset:0;
-    background-image:
-      radial-gradient(circle at 15% 10%, rgba(201,126,156,0.10), transparent 40%),
-      radial-gradient(circle at 85% 90%, rgba(185,136,76,0.10), transparent 40%);
-    pointer-events:none;
-    z-index:0;
-  }
-  .wrap{max-width:1000px; margin:0 auto; padding:0 28px; position:relative; z-index:1;}
+:root,[data-t=candy]{--bg:#F1F0F9;--card:#fff;--ink:#16162A;--mut:#8786A3;--ln:rgba(22,22,42,.08);--c1:#7B5CFF;--c2:#FF6FA3;--c3:#34D8A6;--c4:#FFC247;--off:#E2E1EC;--in:#F3F2F9;--sh:0 10px 28px -14px rgba(70,40,190,.35)}
+[data-t=midnight]{--bg:#08080F;--card:#16161F;--ink:#F5F5FA;--mut:#8B8BA6;--ln:rgba(255,255,255,.08);--c1:#8F7BFF;--c2:#FF6B9A;--c3:#35E0B0;--c4:#FFC857;--off:#3A3A52;--in:#0D0D15;--sh:none}
+[data-t=matcha]{--bg:#E8EFDD;--card:#FAFCF5;--ink:#1B2A1C;--mut:#74846D;--ln:rgba(27,42,28,.09);--c1:#2F7A4F;--c2:#D4A72C;--c3:#7BD389;--c4:#F6B66B;--off:#D2DBC4;--in:#EDF2E4;--sh:0 10px 28px -14px rgba(40,90,50,.4)}
+[data-t=sunset]{--bg:#FFEEE4;--card:#FFFAF6;--ink:#2B1420;--mut:#A2798A;--ln:rgba(43,20,32,.08);--c1:#FF5A5F;--c2:#FF9B3D;--c3:#3ED6B0;--c4:#FFD36B;--off:#F1D9CE;--in:#FFF0E8;--sh:0 10px 28px -14px rgba(220,70,50,.4)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--f:'Plus Jakarta Sans',-apple-system,'SF Pro Display',system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px)}
+html,body{margin:0;min-height:100%;background:var(--bg);transition:background .4s}
+body{font:500 16px/1.45 var(--f);color:var(--ink);max-width:560px;margin:0 auto;padding-bottom:calc(104px + env(safe-area-inset-bottom,0px))}
+main{padding:8px 16px 0}
+h1,h2,h3,p{margin:0}
+.top{display:flex;justify-content:space-between;align-items:flex-end;padding:18px 4px 18px}
+.top p{color:var(--mut);font-weight:600;font-size:14px;margin-bottom:2px}
+.top h1{font-size:36px;font-weight:800;letter-spacing:-.035em;line-height:1.05}
+.th{width:46px;height:46px;border-radius:50%;border:0;background:var(--card);box-shadow:var(--sh);font-size:21px}
+.st{font-size:20px;font-weight:800;letter-spacing:-.02em;margin:26px 4px 12px}
+.card,.tile,.hero{border-radius:30px;margin-bottom:14px}
+.card{background:var(--card);padding:20px;box-shadow:var(--sh)}
+.hero{padding:22px;color:#fff;background:linear-gradient(150deg,var(--m1),var(--m2));box-shadow:0 22px 40px -18px var(--m1);transition:background .5s}
+.hrow{display:flex;justify-content:space-between;align-items:center}
+.hrow p{opacity:.85;font-weight:600;font-size:14px}.hrow h2{font-size:30px;font-weight:800;letter-spacing:-.03em;margin-top:2px}
+.big{font-size:76px;line-height:1;filter:drop-shadow(0 8px 12px rgba(0,0,0,.2))}
+.pick{display:flex;gap:8px;margin-top:20px}
+.pick button{flex:1;aspect-ratio:1;max-height:58px;border-radius:50%;border:0;font-size:26px;background:rgba(255,255,255,.22);transition:.25s}
+.pick button.on{background:#fff;transform:translateY(-4px) scale(1.08);box-shadow:0 10px 18px -6px rgba(0,0,0,.35)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.tile{padding:18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;color:#16160F;margin-bottom:14px}
+.t4{background:var(--c4)}.t3{background:var(--c3)}
+.tile b{font-size:54px;font-weight:800;letter-spacing:-.04em;line-height:1}.tile small{font-weight:700;opacity:.7;font-size:13px}
+.tile span{font-size:30px}
+.week{display:flex;justify-content:space-between}
+.wd{width:13.5%;text-align:center;padding:10px 0;border-radius:18px}
+.wd small{display:block;color:var(--mut);font-weight:700;font-size:12px}.wd b{display:block;font-size:21px;font-weight:500;min-height:30px;margin-top:3px}
+.wd.now{background:var(--c1);}.wd.now small{color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:0;background:var(--in);color:var(--ink);padding:10px 16px;border-radius:99px;font:600 14px var(--f);transition:.2s}
+.chip.on{background:var(--c1);color:#fff;box-shadow:0 8px 16px -8px var(--c1)}
+.list{padding:6px 18px}
+.row{display:flex;align-items:center;gap:14px;width:100%;padding:14px 0;border:0;border-bottom:1px solid var(--ln);background:none;color:var(--ink);font:600 16px var(--f);text-align:left}
+.row:last-child{border:0}
+.ri{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;font-size:20px;background:var(--in);flex:none}
+.row .t{flex:1}
+.sw{width:51px;height:31px;border-radius:99px;background:var(--off);position:relative;transition:.25s;flex:none}
+.sw:after{content:"";position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.3);transition:.25s}
+.sw.on{background:var(--c3)}.sw.on:after{transform:translateX(20px)}
+.ck{width:30px;height:30px;border-radius:50%;border:2.5px solid var(--off);flex:none;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;transition:.2s}
+.ck.on{background:var(--c1);border-color:var(--c1)}
+.done .t{text-decoration:line-through;opacity:.4}
+.x{border:0;background:none;color:var(--mut);font-size:18px;padding:10px}
+.empty{text-align:center;color:var(--mut);padding:26px 0;font-weight:600}.empty b{display:block;font-size:38px;margin-bottom:4px}
+textarea,input[type=text]{width:100%;background:var(--in);border:2px solid transparent;border-radius:20px;padding:15px 17px;color:var(--ink);font:500 16px/1.45 var(--f);resize:vertical;margin-top:10px}
+textarea{min-height:100px}::placeholder{color:var(--mut);opacity:.8}
+textarea:focus,input:focus{outline:0;border-color:var(--c1)}
+label.l{display:flex;gap:10px;align-items:center;font-weight:800;font-size:17px;letter-spacing:-.01em}
+.fld+.fld{margin-top:22px}
+.gc{background:linear-gradient(150deg,var(--c1),var(--c2));color:#fff;box-shadow:0 22px 40px -18px var(--c1)}
+.gc textarea{background:rgba(255,255,255,.2);color:#fff}.gc textarea::placeholder{color:#fff;opacity:.7}.gc textarea:focus{border-color:#fff}
+.btn{border:0;border-radius:20px;padding:15px 24px;font:700 16px var(--f);background:var(--c1);color:#fff;box-shadow:0 12px 22px -10px var(--c1)}
+.btn:active{transform:scale(.97)}.btn.g{background:var(--in);color:var(--ink);box-shadow:none}
+.pill{display:inline-block;background:rgba(255,255,255,.22);padding:6px 13px;border-radius:99px;font-weight:700;font-size:13px}
+.q{font-size:29px;font-weight:800;letter-spacing:-.03em;line-height:1.12;margin:16px 0 8px}
+.pb{height:8px;background:var(--in);border-radius:9px;overflow:hidden;margin:0 4px 16px}.pb i{display:block;height:100%;background:linear-gradient(90deg,var(--c1),var(--c2));border-radius:9px;transition:.5s}
+.opt{display:flex;gap:14px;align-items:center;width:100%;text-align:left;margin-top:10px;padding:14px 16px;border-radius:22px;border:0;background:rgba(255,255,255,.18);color:#fff;font:600 16px var(--f);transition:.2s}
+.opt .lt{width:30px;height:30px;flex:none;border-radius:11px;display:grid;place-items:center;font-weight:800;font-size:13px;background:rgba(255,255,255,.25)}
+.opt.on{background:#fff;color:#16162A;box-shadow:0 12px 22px -10px rgba(0,0,0,.4)}.opt.on .lt{background:var(--c1);color:#fff}
+.nav{display:flex;justify-content:space-between;margin-top:18px}
+.nav .g{background:rgba(255,255,255,.2);color:#fff}.nav .btn:not(.g){background:#fff;color:var(--c1);box-shadow:none}
+.dots{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.dots button{aspect-ratio:1;border:0;border-radius:14px;background:var(--in);color:var(--mut);font:700 13px var(--f)}
+.dots .ans{background:color-mix(in srgb,var(--c3) 35%,var(--in));color:var(--ink)}.dots .on{background:var(--c1);color:#fff}
+.ent{padding:13px 0;border-bottom:1px solid var(--ln)}.ent:last-child{border:0}.ent b{font-weight:800}.ent div{color:var(--mut);font-size:14px;margin-top:2px}
+.add{display:flex;gap:8px}.add input{margin:0}
+.tabs{background:var(--card);position:fixed;left:0;right:0;bottom:0;max-width:560px;margin:0 auto;display:flex;padding:8px 10px calc(8px + env(safe-area-inset-bottom,0px));background:color-mix(in srgb,var(--card) 82%,transparent);backdrop-filter:blur(26px) saturate(1.8);-webkit-backdrop-filter:blur(26px) saturate(1.8);border-top:1px solid var(--ln)}
+.tabs button{flex:1;border:0;background:none;color:var(--mut);font:700 11px var(--f);display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0}
+.tabs svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.tabs .on{color:var(--c1)}.tabs .on svg{fill:color-mix(in srgb,var(--c1) 22%,transparent)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-  h1,h2,h3{font-family:'Marcellus', serif; font-weight:400; letter-spacing:0.02em;}
-  .eyebrow{
-    font-family:'Jost', sans-serif;
-    text-transform:uppercase;
-    letter-spacing:0.32em;
-    font-size:12px;
-    color:var(--mauve-deep);
-    font-weight:500;
-  }
-
-  /* ---------- decorative arch shared ---------- */
-  .arch-line{
-    position:relative;
-  }
-  .arch-line svg{display:block; width:100%; height:auto;}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    padding:64px 0 40px;
-    text-align:center;
-    position:relative;
-  }
-  .motif{
-    width:74px; height:74px;
-    margin:0 auto 22px;
-    color:var(--gold);
-  }
-  .hero .eyebrow{display:block; margin-bottom:18px;}
-  .hero h1{
-    font-size:clamp(40px, 7vw, 68px);
-    color:var(--mauve-deep);
-    line-height:1.08;
-  }
-  .hero h1 em{
-    font-style:italic;
-    font-family:'Cormorant Garamond', serif;
-    display:block;
-    font-size:0.42em;
-    color:var(--gold);
-    margin-top:10px;
-    letter-spacing:0.06em;
-  }
-  .hero .sub{
-    max-width:520px;
-    margin:22px auto 0;
-    font-size:16.5px;
-    color:#5b3a48;
-  }
-
-  .divider{
-    display:flex; align-items:center; gap:14px;
-    justify-content:center;
-    margin:34px auto;
-    max-width:340px;
-  }
-  .divider .l{flex:1; height:1px; background:linear-gradient(90deg, transparent, var(--rose));}
-  .divider .r{flex:1; height:1px; background:linear-gradient(90deg, var(--rose), transparent);}
-  .divider .dot{
-    width:7px; height:7px; border-radius:50%;
-    background:var(--gold); transform:rotate(45deg);
-  }
-
-  /* date block */
-  .plaindate{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:6px;
-  }
-  .plaindate .pd-day{
-    font-family:'Marcellus';
-    font-size:clamp(22px,3.4vw,28px);
-    color:var(--mauve-deep);
-  }
-  .plaindate .pd-time{
-    font-size:13px;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    color:#6b4453;
-    font-weight:500;
-  }
-
-  .countdown{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:14px;
-    margin:36px auto 0;
-  }
-  .cd-item{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    min-width:64px;
-  }
-  .cd-num{
-    font-family:'Marcellus';
-    font-size:clamp(30px,5vw,42px);
-    color:var(--mauve);
-    line-height:1;
-    font-variant-numeric:tabular-nums;
-  }
-  .cd-label{
-    margin-top:6px;
-    font-size:10.5px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:#8a6472;
-  }
-  .cd-sep{
-    font-family:'Marcellus';
-    font-size:clamp(24px,4vw,34px);
-    color:var(--gold);
-    opacity:0.6;
-    transform:translateY(-8px);
-  }
-  @media (max-width:560px){
-    .countdown{ gap:8px; }
-    .cd-item{ min-width:52px; }
-    .cd-sep{ display:none; }
-  }
-
-  /* ---------- SECTION FRAME ---------- */
-  section{
-    position:relative;
-    padding:70px 0;
-  }
-  section + section{
-    border-top:1px solid var(--line);
-  }
-  .section-head{
-    text-align:center;
-    margin-bottom:48px;
-  }
-  .section-head h2{
-    font-size:clamp(30px,4.4vw,42px);
-    color:var(--mauve-deep);
-    margin-top:12px;
-  }
-
-  /* ---------- SCHEDULE ---------- */
-  .timeline{
-    max-width:640px;
-    margin:0 auto;
-    position:relative;
-  }
-  .timeline::before{
-    content:"";
-    position:absolute;
-    left:17px;
-    top:8px; bottom:8px;
-    width:1px;
-    background:linear-gradient(var(--rose), var(--gold));
-    opacity:0.5;
-  }
-  .tl-item{
-    display:grid;
-    grid-template-columns:34px 1fr;
-    gap:0 20px;
-    align-items:flex-start;
-    padding-bottom:44px;
-  }
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-time{
-    display:block;
-    font-family:'Marcellus';
-    font-size:14px;
-    color:var(--mauve);
-    margin:0 0 6px;
-    padding:0;
-    white-space:nowrap;
-  }
-  .tl-node{
-    display:flex; justify-content:center; align-items:flex-start; padding-top:4px;
-  }
-  .tl-node span{
-    width:15px; height:15px;
-    border-radius:50%;
-    background:var(--ivory);
-    border:2px solid var(--gold);
-    display:block;
-    position:relative; z-index:2;
-  }
-  .tl-content h3{
-    font-size:22px;
-    color:var(--plum);
-    margin:0 0 6px;
-    padding:0;
-  }
-  .tl-content{
-    margin:0; padding:0;
-  }
-  .tl-content p{
-    font-size:14.5px;
-    color:#6b4a58;
-    max-width:380px;
-  }
-  .tl-content .tag{
-    display:inline-block;
-    margin-top:10px;
-    font-size:11px;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:var(--gold);
-    border:1px solid rgba(185,136,76,0.4);
-    padding:4px 10px;
-    border-radius:20px;
-  }
-
-  /* ---------- LOCATIONS ---------- */
-  .loc-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:28px;
-  }
-  @media (max-width:760px){ .loc-grid{grid-template-columns:1fr;} }
-
-  .loc-card{
-    background:rgba(255,255,255,0.55);
-    border:1px solid var(--line);
-    border-radius:6px;
-    overflow:hidden;
-    display:flex; flex-direction:column;
-    box-shadow:var(--shadow);
-    transition:transform .25s ease, box-shadow .25s ease;
-  }
-  .loc-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 26px 48px -20px rgba(58,30,42,0.42);
-  }
-  .loc-map{
-    position:relative;
-    width:100%;
-    height:210px;
-    display:block;
-    overflow:hidden;
-    background:
-      radial-gradient(circle at 30% 20%, rgba(201,126,156,0.16), transparent 55%),
-      radial-gradient(circle at 80% 75%, rgba(185,136,76,0.14), transparent 50%),
-      linear-gradient(135deg, #f3e3ea 0%, #f6ecdf 100%);
-  }
-  .loc-map svg{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-  }
-  .loc-map .pin-wrap{
-    position:absolute;
-    left:50%; top:50%;
-    transform:translate(-50%,-92%);
-    display:flex; flex-direction:column; align-items:center;
-    z-index:2;
-  }
-  .loc-map .pin{
-    width:34px; height:34px;
-    border-radius:50% 50% 50% 0;
-    background:var(--mauve-deep);
-    transform:rotate(-45deg);
-    box-shadow:0 8px 18px -4px rgba(58,30,42,0.45);
-    display:flex; align-items:center; justify-content:center;
-    animation:pinDrop 1.6s ease-in-out infinite;
-  }
-  .loc-map .pin::after{
-    content:"";
-    width:11px; height:11px;
-    border-radius:50%;
-    background:var(--ivory);
-    transform:rotate(45deg);
-  }
-  .loc-map .pin-shadow{
-    width:20px; height:6px;
-    margin-top:6px;
-    border-radius:50%;
-    background:rgba(58,30,42,0.25);
-    filter:blur(1px);
-  }
-  @keyframes pinDrop{
-    0%,100%{ transform:translateY(0) rotate(-45deg); }
-    50%{ transform:translateY(-6px) rotate(-45deg); }
-  }
-  .loc-map .coords{
-    position:absolute;
-    bottom:12px; left:14px;
-    font-size:11px;
-    letter-spacing:0.06em;
-    color:var(--mauve-deep);
-    background:rgba(255,255,255,0.6);
-    padding:4px 10px;
-    border-radius:20px;
-    z-index:2;
-  }
-  .loc-map .tap-hint{
-    position:absolute;
-    top:12px; right:14px;
-    font-size:10.5px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--mauve-deep);
-    background:rgba(255,255,255,0.6);
-    padding:5px 11px;
-    border-radius:20px;
-    z-index:2;
-    opacity:0;
-    transform:translateY(-4px);
-    transition:opacity .25s ease, transform .25s ease;
-  }
-  a.loc-map:hover .tap-hint{ opacity:1; transform:translateY(0); }
-  a.loc-map:hover .pin{ background:var(--mauve); }
-  a.loc-map{ cursor:pointer; text-decoration:none; }
-  .loc-body{
-    padding:26px 26px 28px;
-    flex:1;
-    display:flex; flex-direction:column;
-  }
-  .loc-kicker{
-    font-size:11px; letter-spacing:0.24em; text-transform:uppercase;
-    color:var(--mauve); font-weight:500;
-  }
-  .loc-body h3{
-    font-size:24px;
-    margin:8px 0 6px;
-    color:var(--plum);
-  }
-  .loc-addr{
-    font-size:14.5px;
-    color:#6b4a58;
-    margin-bottom:20px;
-    flex:1;
-  }
-  .btn-directions{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    background:var(--mauve-deep);
-    color:#fff;
-    text-decoration:none;
-    padding:13px 22px;
-    border-radius:3px;
-    font-family:'Jost'; font-weight:500;
-    font-size:13.5px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    transition:background .2s ease, transform .2s ease;
-  }
-  .btn-directions:hover{ background:var(--mauve); transform:translateY(-1px); }
-  .btn-directions svg{width:15px; height:15px;}
-  .loc-hint{
-    font-size:12px;
-    color:#8a6472;
-    margin-top:10px;
-    font-style:italic;
-  }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    text-align:center;
-    padding:56px 0 70px;
-  }
-  footer .motif{width:46px; height:46px; margin-bottom:16px;}
-  footer h3{
-    font-size:26px; color:var(--mauve-deep); margin-bottom:8px;
-  }
-  footer p{ color:#6b4a58; font-size:14.5px; max-width:420px; margin:0 auto; }
-  footer .names{
-    margin-top:26px;
-    font-family:'Cormorant Garamond', serif;
-    font-style:italic;
-    font-size:18px;
-    color:var(--plum);
-    line-height:1.9;
-  }
-
-  @media (max-width:600px){
-    .timeline::before{ left:15px; }
-    .tl-item{ grid-template-columns:30px 1fr; gap:0 16px; padding-bottom:38px; }
-    .datecard{padding:26px 20px;}
-  }
 </style>
-</head>
-<body>
+</head><body><main id="app"><p style="padding:28px 8px;font:16px -apple-system,sans-serif;color:#555">Loading your journal… if this text stays, your browser blocked the script. Open this file directly in Safari or Chrome.</p></main><nav class="tabs" id="tabs"></nav><script>
+window.addEventListener("error",function(e){var a=document.getElementById("app");if(a)a.innerHTML='<pre style="padding:20px;white-space:pre-wrap;color:#c00;font:14px monospace">Journal error: '+e.message+" (line "+e.lineno+")</pre>"});
 
-<div class="wrap">
+const $=s=>document.querySelector(s);
+let S;try{S=JSON.parse(localStorage.getItem('jr3')||'')}catch(e){}S=S||{days:{},ans:{},todo:{}};
+const save=()=>{try{localStorage.setItem('jr3',JSON.stringify(S))}catch(e){}};
+const dk=(o=0)=>{const d=new Date();d.setDate(d.getDate()+o);return d.toLocaleDateString('en-CA')};
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const D=()=>S.days[dk()]||(S.days[dk()]={mood:0,tags:[],r:{}});
+const T=d=>S.todo[d]||(S.todo[d]=[]);
+const MO=['😞','😕','😐','🙂','😄'],ML=['Rough','Low','Okay','Good','Great'];
+const OR=[['#6B6890','#A29EC8'],['#5B7CFA','#8FA8FF'],['#8F7CFF','#FFB27A'],['#2EC4B6','#9BE8A0'],['#FF9F5A','#FFD36B']];
+const TG=['Calm','Happy','Grateful','Proud','Motivated','Tired','Stressed','Anxious','Lonely','Bored','Overthinking','Focused'];
+const RT=['Woke up on time','Exercised or moved','Deep work / studied','Built a project','Ate well','Limited social media','Slept on time','Spent time with people'];
+const Q=`What do you want most from life?~Success / achievement|Freedom and independence|Financial security|Knowledge and learning|Love / family|Adventure and experiences|Making an impact|Becoming an exceptional person|Peace and happiness|I don't know yet
+What makes you feel most alive?~Learning something difficult|Building / creating something|Winning / competing|Helping someone|Exploring something new|Improving myself|Being with people I love|Being alone and thinking|Accomplishing something meaningful|Other
+What makes you feel proud of yourself?~Solving something difficult|Being disciplined|Becoming better than before|Achieving what others thought was hard|Helping someone|Staying true to myself|Learning / mastering something|Overcoming something difficult
+What kind of person do you want to become?~Highly intelligent|Extremely skilled|Disciplined|Confident|Kind|Independent|Physically strong / healthy|Successful|Calm and emotionally strong|Someone I genuinely respect
+Which activity attracts you naturally?~Understanding how things work|Building things|Solving problems|Researching|Teaching / explaining|Creating|Leading|Competing|Helping people|Exploring new things
+When you have free time, what do you WANT to do?~Learn|Build / work on projects|Exercise|Watch entertainment|Socialize|Explore|Play games|Think / read|Sleep / rest|I usually don't know what to do
+What gives you the strongest feeling of progress?~Getting better at a skill|Getting better physically|Getting better academically|Building something|Earning money|Becoming more disciplined|Becoming more confident|Understanding something I couldn't before
+What would you most like to master?~A technical skill|A creative skill|Communication|Leadership|Physical ability|Academic knowledge|Business / money|Something completely different
+What kind of work sounds most satisfying?~Solving hard problems|Creating new things|Discovering something new|Building useful products|Helping people|Leading people|Becoming an expert|Having freedom over my work|Making lots of money|I don't know
+What do you want your career to give you?~Intellectual challenge|Money|Stability|Freedom|Prestige|Meaning|Continuous learning|Impact|Interesting people / environment|Work-life balance
+What are you most afraid of?~Failure|Wasting my potential|Being ordinary|Disappointing people|Financial insecurity|Being alone|Choosing the wrong path|Regretting my choices|Never finding what I truly want|Other
+What do you feel you waste the most time on?~Social media|YouTube / entertainment|Phone|Overthinking|Procrastination|Sleeping|People / socializing|Random / unplanned activities|Nothing major
+After wasting time, what do you usually feel?~Guilty|Frustrated|Nothing|Anxious|Disappointed in myself|I tell myself I'll do better tomorrow|I don't really care
+What usually motivates you to improve?~Seeing progress|Competition|Proving myself|Becoming better than yesterday|Fear of falling behind|Curiosity|A clear goal|Someone inspiring me|Recognition|Nothing consistently
+When you achieve something, what feeling do you want most?~"I'm proud of myself."|"I'm becoming better."|"I proved I could do it."|"Other people recognize me."|"I can do something difficult now."|"My life is moving forward."|"I made someone proud."|"I feel fulfilled."
+Which statement sounds most like you?~I want to become exceptional.|I want to live peacefully.|I want to experience as much as possible.|I want to make something meaningful.|I want to help people.|I want freedom.|I want to understand the world.|I honestly don't know yet.
+If money were completely taken care of, what would you do?~Learn|Research|Build things|Travel / explore|Spend time with people|Create art / content|Help others|Start projects / businesses|Exercise / sports|Something else
+What do you admire most in other people?~Intelligence|Discipline|Confidence|Courage|Kindness|Success|Creativity|Knowledge|Independence|Their ability to enjoy life
+Which would hurt you most?~Never reaching my potential|Living an ordinary life|Losing people I love|Financial failure|Never finding my passion|Being unsuccessful|Having no meaningful contribution|Looking back with regrets
+What do you currently need most?~Direction|Discipline|Confidence|Motivation|Rest|Better habits|A clear goal|More experiences|Better relationships|I genuinely don't know
+What would make you respect yourself more?~Being consistent|Getting physically fit|Becoming highly skilled|Getting academically / career-wise successful|Keeping promises to myself|Becoming financially independent|Becoming emotionally stronger|Doing something meaningful
+Imagine yourself at 30. What would make you think, "I did well"?~Great career|Financial independence|Excellent health|Strong relationships / family|Mastery of a field|Meaningful work|Lots of experiences|Being proud of who I became|Having helped others
+What should you probably STOP doing?~Procrastinating|Comparing myself|Overthinking|Seeking validation|Wasting time online|Chasing too many things|Being too hard on myself|Avoiding difficult things|Something else
+What should you START doing?~Exercising regularly|Reading / learning|Working consistently toward one goal|Building projects|Spending less time online|Meeting more people|Exploring new interests|Reflecting / journaling|Sleeping better|Taking more risks
+"I would feel genuinely proud of my life if…"~I became the best version of myself|I achieved something exceptional|I built something meaningful|I helped a lot of people|I became highly knowledgeable / skilled|I had freedom over my life|I had a great family and relationships|I experienced a lot of life|I became someone my younger self would admire|My own answer
+When I face something difficult, what is my first thought?~"I can figure this out."|"I'll probably fail."|"Other people are probably better than me."|"I don't know, but I'll try."|I avoid it because I don't want to fail
+What makes me lose confidence in myself the most?~Comparing myself with others|Failure|Criticism|Academic / career performance|My appearance / fitness|Social situations|Feeling behind in life|Breaking promises to myself|Not knowing what I want
+How often do I compare my life / progress with other people?~Almost never|Occasionally|Frequently|Almost every day|I constantly feel behind others
+When someone is better than me at something, I usually feel…~Inspired|Motivated to improve|Neutral|Jealous / insecure|Like I'm not good enough|Like I should give up
+How much do I trust myself to do what I say I'll do?~Completely|Mostly|Sometimes|Rarely|Almost never
+Which would make me more confident?~Becoming more skilled|Becoming physically healthier / stronger|Getting better academically / career-wise|Becoming financially independent|Becoming more socially comfortable|Keeping promises to myself|Accepting myself more|Achieving something difficult
+When I fail, what do I usually conclude?~"That didn't work; I'll try differently."|"I need more practice."|"I'm not good at this."|"Maybe I'm not capable."|"Everyone else is better than me."|"I don't want to try again."
+What do I think I need to become before I can finally feel confident?~More successful|More intelligent|More skilled|More attractive / fit|More financially secure|More socially confident|I don't know|Nothing — I need to accept myself as I am
+How do I talk to myself when I make a mistake?~Like a supportive friend|Normally, without much emotion|I criticize myself|I call myself stupid / useless|I keep thinking about the mistake for a long time
+What would make me genuinely say, "I believe in myself"?~Knowing I can handle failure|Knowing I can learn difficult things|Becoming disciplined|Achieving something significant|Being comfortable with who I am|Stopping comparison with others|Trusting myself to follow through|I don't know yet`.split('\n').map(l=>{const[a,b]=l.split('~');return[a,b.split('|')]});
+let tab='today',qi=0;
+const nav=[['today','☀️','Today'],['write','✍️','Journal'],['ask','🪞','Ask me'],['next','🌙','Tomorrow']];
+const NAME='Hilay'; // change to your name
+const THEMES=['candy','midnight','matcha','sunset'];
+const RI=['⏰','🏃','📚','🛠️','🥗','📵','😴','🫶'];
+const MC=[['#5B5B7E','#9494B8'],['#4F7CFF','#7FB0FF'],['#8F6BFF','#FF8FB8'],['#14B88F','#7ADB6A'],['#FF9F1C','#FF5E7E']];
+const IC={today:'<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/>',write:'<path d="M4 20h4L19.5 8.5a2.8 2.8 0 0 0-4-4L4 16z"/><path d="M13.5 6.5l4 4"/>',ask:'<path d="M11 3l2 5.5L18.5 10.5 13 12.5 11 18l-2-5.5L3.5 10.5 9 8.5z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/>',next:'<path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/>'};
+function ring(p,z=84){const r=z/2-8,c=2*Math.PI*r,m=z/2;return`<svg width="${z}" height="${z}" viewBox="0 0 ${z} ${z}"><circle cx="${m}" cy="${m}" r="${r}" fill="none" stroke="rgba(0,0,0,.12)" stroke-width="9"/><circle cx="${m}" cy="${m}" r="${r}" fill="none" stroke="#16160F" stroke-width="9" stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-p/100)}" transform="rotate(-90 ${m} ${m})" style="transition:stroke-dashoffset .6s"/><text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" fill="#16160F" font-size="20" font-weight="800" font-family="Plus Jakarta Sans,sans-serif">${p}%</text></svg>`}
+function pct(){const d=D(),l=T(dk()),t=RT.length+l.length,n=RT.filter(r=>d.r[r]).length+l.filter(x=>x.d).length;return t?Math.round(n/t*100):0}
+const hdr=(t,s)=>`<header class="top"><div><p>${s}</p><h1>${t}</h1></div><button class="th" data-a="th" aria-label="Change theme">🎨</button></header>`;
+function todoList(date,del){const l=T(date);return l.length?l.map((x,i)=>`<div style="display:flex;align-items:center"><button class="row ${x.d?'done':''}" data-a="td" data-d="${date}" data-i="${i}"><span class="ck ${x.d?'on':''}">${x.d?'✓':''}</span><span class="t">${esc(x.t)}</span></button>${del?`<button class="x" data-a="tx" data-d="${date}" data-i="${i}" aria-label="Delete">✕</button>`:''}</div>`).join(''):'<div class="empty"><b>🌱</b>Nothing here yet</div>'}
+function view(){
+ const d=D(),h=new Date().getHours(),g=h<5?'Still up':h<12?'Good morning':h<18?'Good afternoon':'Good evening',fd=k=>new Date(k+'T00:00'),ds=(k,o)=>fd(k).toLocaleDateString('en-IN',o);
+ let o='';
+ if(tab=='today'){
+  let st=0;for(let i=0;i<90;i++){const e=S.days[dk(-i)];if(e&&(e.mood||e.note||e.self||Object.values(e.r||{}).some(Boolean)))st++;else if(i>0)break}
+  const mc=MC[d.mood?d.mood-1:2],rd=RT.filter(r=>d.r[r]).length;
+  const wk=[6,5,4,3,2,1,0].map(i=>{const k=dk(-i),e=S.days[k]||{};return`<div class="wd ${i?'':'now'}"><small>${ds(k,{weekday:'short'}).slice(0,2)}</small><b>${e.mood?MO[e.mood-1]:'·'}</b></div>`}).join('');
+  o=hdr(g+', '+esc(NAME),ds(dk(),{weekday:'long',day:'numeric',month:'long'}))+
+  `<section class="hero" style="--m1:${mc[0]};--m2:${mc[1]}"><div class="hrow"><div><p>Today's mood</p><h2>${d.mood?ML[d.mood-1]:'How are you?'}</h2></div><div class="big">${d.mood?MO[d.mood-1]:'🫧'}</div></div>
+  <div class="pick">${MO.map((m,i)=>`<button data-a="m" data-i="${i+1}" class="${d.mood==i+1?'on':''}" aria-label="${ML[i]}">${m}</button>`).join('')}</div></section>
+  <div class="grid2"><div class="tile t4"><span>🔥</span><div><b>${st}</b><br><small>day streak</small></div></div><div class="tile t3">${ring(pct())}<small>of today done</small></div></div>
+  <div class="card"><div class="week">${wk}</div></div>
+  <h3 class="st">What I'm feeling</h3><div class="card"><div class="chips">${TG.map(t=>`<button class="chip ${d.tags.includes(t)?'on':''}" data-a="tg" data-t="${t}">${t}</button>`).join('')}</div></div>
+  <h3 class="st">Daily routine · ${rd}/${RT.length}</h3><div class="card list">${RT.map((r,i)=>`<button class="row" data-a="r" data-t="${r}"><span class="ri">${RI[i]}</span><span class="t">${r}</span><span class="sw ${d.r[r]?'on':''}"></span></button>`).join('')}</div>
+  <h3 class="st">Today's to-do</h3><div class="card list">${todoList(dk(),0)}</div>`;
+ }
+ if(tab=='write'){
+  const ks=Object.keys(S.days).filter(k=>k!=dk()&&(S.days[k].note||S.days[k].self||S.days[k].mood)).sort().reverse().slice(0,8);
+  o=hdr('Journal','A quiet page, just for you')+
+  `<div class="card"><div class="fld"><label class="l">📝 What happened today?</label><textarea data-f="note" placeholder="Start anywhere…">${esc(d.note)}</textarea></div>
+  <div class="fld"><label class="l">🏆 One win, however small</label><input type="text" data-f="win" value="${esc(d.win)}"></div>
+  <div class="fld"><label class="l">🙏 I'm grateful for…</label><input type="text" data-f="grat" value="${esc(d.grat)}"></div></div>
+  <div class="card gc"><label class="l">🪞 How do I feel about myself right now?</label><textarea data-f="self" placeholder="Be honest, and be kind.">${esc(d.self)}</textarea></div>
+  <div class="card"><label class="l">🤝 How much do I trust myself today?</label><div class="chips" style="margin-top:12px">${[1,2,3,4,5].map(i=>`<button class="chip ${d.trust==i?'on':''}" data-a="tr" data-i="${i}" style="flex:1">${i}</button>`).join('')}</div><p style="color:var(--mut);font-size:13px;margin-top:10px">1 is not at all, 5 is completely</p></div>
+  <h3 class="st">Past entries</h3><div class="card">${ks.length?ks.map(k=>{const e=S.days[k];return`<div class="ent"><b>${e.mood?MO[e.mood-1]:'📓'} ${ds(k,{weekday:'short',day:'numeric',month:'short'})}</b><div>${esc((e.note||e.self||'').slice(0,120))}</div></div>`}).join(''):'<div class="empty"><b>📖</b>Earlier days will appear here</div>'}</div>`;
+ }
+ if(tab=='ask'){
+  const [q,op]=Q[qi],a=S.ans[qi]||{s:[],n:''},n=Object.values(S.ans).filter(x=>x.s.length).length;
+  o=hdr('Ask myself',n+' of '+Q.length+' answered')+`<div class="pb"><i style="width:${n/Q.length*100}%"></i></div>
+  <div class="card gc"><span class="pill">Question ${qi+1} of ${Q.length}</span><div class="q">${esc(q)}</div>
+  ${op.map((x,i)=>`<button class="opt ${a.s.includes(i)?'on':''}" data-a="o" data-i="${i}"><span class="lt">${String.fromCharCode(65+i)}</span>${esc(x)}</button>`).join('')}
+  <textarea data-f="qn" placeholder="Why? Add a thought (optional)" style="min-height:76px">${esc(a.n)}</textarea>
+  <div class="nav"><button class="btn g" data-a="qn" data-i="-1">Back</button><button class="btn" data-a="qn" data-i="1">${qi==Q.length-1?'Start over':'Next'}</button></div></div>
+  <div class="card"><div class="dots">${Q.map((_,i)=>`<button class="${i==qi?'on':(S.ans[i]||{s:[]}).s.length?'ans':''}" data-a="qj" data-i="${i}">${i+1}</button>`).join('')}</div></div>`;
+ }
+ if(tab=='next'){
+  const un=T(dk()).filter(x=>!x.d).length;
+  o=hdr('Tomorrow',ds(dk(1),{weekday:'long',day:'numeric',month:'long'}))+
+  `<div class="card"><div class="add"><input type="text" id="nt" placeholder="Add a task for tomorrow"><button class="btn" data-a="add">Add</button></div></div>
+  <div class="card list">${todoList(dk(1),1)}</div>
+  ${un?`<button class="btn g" data-a="carry" style="width:100%;margin-bottom:14px">Carry over ${un} unfinished from today</button>`:''}
+  <div class="card"><label class="l">💌 A note to tomorrow-me</label><textarea data-f="intent" placeholder="Tomorrow, I will…">${esc((S.days[dk(1)]||{}).intent)}</textarea></div>`;
+ }
+ $('#app').innerHTML=o;
+ $('#tabs').innerHTML=nav.map(n=>`<button class="${tab==n[0]?'on':''}" data-a="tab" data-t="${n[0]}"><svg viewBox="0 0 24 24">${IC[n[0]]}</svg>${n[2]}</button>`).join('');
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-a]');if(!b)return;const a=b.dataset.a,d=D(),i=+b.dataset.i,t=b.dataset.t,dt=b.dataset.d;
+ if(a=='tab'){tab=t;scrollTo(0,0)}
+ else if(a=='m')d.mood=d.mood==i?0:i;
+ else if(a=='tg')d.tags=d.tags.includes(t)?d.tags.filter(x=>x!=t):[...d.tags,t];
+ else if(a=='r')d.r[t]=!d.r[t];
+ else if(a=='tr')d.trust=i;
+ else if(a=='td')T(dt)[i].d=!T(dt)[i].d;
+ else if(a=='tx')T(dt).splice(i,1);
+ else if(a=='add'){const v=$('#nt').value.trim();if(v)T(dk(1)).push({t:v,d:0})}
+ else if(a=='carry'){T(dk()).filter(x=>!x.d).forEach(x=>T(dk(1)).push({t:x.t,d:0}))}
+ else if(a=='o'){const x=S.ans[qi]||(S.ans[qi]={s:[],n:''});x.s=x.s.includes(i)?x.s.filter(y=>y!=i):[...x.s,i]}
+ else if(a=='qn'){qi=(qi+i+Q.length)%Q.length}
+ else if(a=='qj')qi=i;
+ else if(a=='th'){S.theme=THEMES[(THEMES.indexOf(S.theme||'candy')+1)%THEMES.length];document.documentElement.dataset.t=S.theme}
+ save();view()});
+document.addEventListener('input',e=>{const f=e.target.dataset.f;if(!f)return;
+ if(f=='qn'){(S.ans[qi]||(S.ans[qi]={s:[],n:''})).n=e.target.value}
+ else if(f=='intent'){(S.days[dk(1)]||(S.days[dk(1)]={mood:0,tags:[],r:{}})).intent=e.target.value}
+ else D()[f]=e.target.value;save()});
+document.addEventListener('keydown',e=>{if(e.key=='Enter'&&e.target.id=='nt')document.querySelector('[data-a=add]').click()});
+document.documentElement.dataset.t=S.theme||'candy';
+view();
 
-  <!-- HERO -->
-  <header class="hero">
-    <svg class="motif" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M50 8C50 8 30 22 30 42C30 56 39 66 50 66C61 66 70 56 70 42C70 22 50 8 50 8Z" stroke="currentColor" stroke-width="1.4"/>
-      <circle cx="50" cy="42" r="6" stroke="currentColor" stroke-width="1.4"/>
-      <path d="M50 66V80" stroke="currentColor" stroke-width="1.4"/>
-      <path d="M36 92C36 92 42 80 50 80C58 80 64 92 64 92" stroke="currentColor" stroke-width="1.4"/>
-      <path d="M18 42C18 42 24 34 30 36" stroke="currentColor" stroke-width="1.2"/>
-      <path d="M82 42C82 42 76 34 70 36" stroke="currentColor" stroke-width="1.2"/>
-    </svg>
-    <span class="eyebrow">Join us as we begin a new chapter</span>
-    <h1>Griha Pravesh<em>of Our New Home</em></h1>
-    <p class="sub">We warmly invite you to celebrate the housewarming ceremony of our home at Divine Bunglow, Supercity, with prayers, ritual, and a shared meal.</p>
-
-    <div class="divider"><span class="l"></span><span class="dot"></span><span class="r"></span></div>
-
-    <div class="plaindate">
-      <span class="pd-day">Thursday, 16th July 2026</span>
-      <span class="pd-time">6:30 AM Onward</span>
-    </div>
-
-    <div class="countdown" id="countdown">
-      <div class="cd-item"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
-      <div class="cd-sep">:</div>
-      <div class="cd-item"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seconds</span></div>
-    </div>
-  </header>
-
-  <!-- SCHEDULE -->
-  <section id="schedule">
-    <div class="section-head">
-      <span class="eyebrow">Order of the Day</span>
-      <h2>Schedule</h2>
-    </div>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-node"><span></span></div>
-        <div class="tl-content">
-          <div class="tl-time">6:30 AM</div>
-          <h3>Griha Pravesh</h3>
-          <p>The auspicious entry ceremony into our new home begins. We kindly request guests to arrive a little before time.</p>
-          <span class="tag">Ceremony Begins</span>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-node"><span></span></div>
-        <div class="tl-content">
-          <div class="tl-time">7:30 – 10:00 AM</div>
-          <h3>Gayatri Yagna</h3>
-          <p>A sacred Vedic fire ritual invoking blessings of prosperity, peace and good health for the home and family.</p>
-          <span class="tag">Sacred Ritual</span>
-        </div>
-      </div>
-
-      <div class="tl-item">
-        <div class="tl-node"><span></span></div>
-        <div class="tl-content">
-          <div class="tl-time">11:00 AM Onward</div>
-          <h3>Lunch</h3>
-          <p>Join us for a festive meal to celebrate together, served at our lunch venue — location and directions below.</p>
-          <span class="tag">Followed By Lunch</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LOCATIONS -->
-  <section id="locations">
-    <div class="section-head">
-      <span class="eyebrow">Getting There</span>
-      <h2>Venues &amp; Directions</h2>
-    </div>
-
-    <div class="loc-grid">
-
-      <!-- House -->
-      <div class="loc-card">
-        <a class="loc-map" href="https://www.google.com/maps/dir/?api=1&destination=23.098488,72.464474&travelmode=driving" aria-label="Open directions to the ceremony venue">
-          <svg viewBox="0 0 400 210" preserveAspectRatio="none">
-            <path d="M0 150 C 80 120, 140 180, 220 140 S 340 90, 400 130" stroke="#c9a4b4" stroke-width="2" fill="none" opacity="0.55"/>
-            <path d="M0 60 C 100 40, 160 90, 260 60 S 360 30, 400 55" stroke="#d8bb92" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4 6"/>
-            <path d="M40 0 C 60 60, 30 120, 60 210" stroke="#c9a4b4" stroke-width="1.5" fill="none" opacity="0.4"/>
-          </svg>
-          <span class="pin-wrap"><span class="pin"></span><span class="pin-shadow"></span></span>
-          <span class="coords">23.0985° N, 72.4645° E</span>
-          <span class="tap-hint">Tap to Navigate</span>
-        </a>
-        <div class="loc-body">
-          <span class="loc-kicker">Ceremony Venue</span>
-          <h3>61, Divine Bunglow</h3>
-          <p class="loc-addr">Supercity, Bhadaj, Ahmedabad – 382721<br>Griha Pravesh &amp; Yagna held here from 6:30 AM.</p>
-          <a class="btn-directions"
-             href="https://www.google.com/maps/dir/?api=1&destination=23.098488,72.464474&travelmode=driving">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            Get Directions
-          </a>
-          <span class="loc-hint">Opens Google Maps with live distance &amp; drive time from your location.</span>
-        </div>
-      </div>
-
-      <!-- Lunch -->
-      <div class="loc-card">
-        <a class="loc-map" href="https://www.google.com/maps/dir/?api=1&destination=23.040479,72.479029&travelmode=driving" aria-label="Open directions to the lunch venue">
-          <svg viewBox="0 0 400 210" preserveAspectRatio="none">
-            <path d="M0 170 C 90 140, 150 190, 230 150 S 350 110, 400 150" stroke="#c9a4b4" stroke-width="2" fill="none" opacity="0.55"/>
-            <path d="M0 50 C 110 70, 170 20, 270 50 S 370 80, 400 45" stroke="#d8bb92" stroke-width="1.5" fill="none" opacity="0.5" stroke-dasharray="4 6"/>
-            <path d="M360 0 C 340 60, 370 120, 340 210" stroke="#c9a4b4" stroke-width="1.5" fill="none" opacity="0.4"/>
-          </svg>
-          <span class="pin-wrap"><span class="pin"></span><span class="pin-shadow"></span></span>
-          <span class="coords">23.0405° N, 72.4790° E</span>
-          <span class="tap-hint">Tap to Navigate</span>
-        </a>
-        <div class="loc-body">
-          <span class="loc-kicker">Lunch Venue</span>
-          <h3>The Raj Thaal &amp; Restaurant</h3>
-          <p class="loc-addr">Ahmedabad, Gujarat<br>Join us here from 11:00 AM onward for lunch.</p>
-          <a class="btn-directions"
-             href="https://www.google.com/maps/dir/?api=1&destination=23.040479,72.479029&travelmode=driving">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"></polygon></svg>
-            Get Directions
-          </a>
-          <span class="loc-hint">Opens Google Maps with live distance &amp; drive time from your location.</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <svg class="motif" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" style="color:var(--gold); margin:0 auto;">
-      <path d="M50 8C50 8 30 22 30 42C30 56 39 66 50 66C61 66 70 56 70 42C70 22 50 8 50 8Z" stroke="currentColor" stroke-width="1.4"/>
-      <circle cx="50" cy="42" r="6" stroke="currentColor" stroke-width="1.4"/>
-    </svg>
-    <h3>With Blessings &amp; Warm Regards</h3>
-    <p>We look forward to welcoming you into our home and beginning this new journey together.</p>
-    <div class="names">
-      Dr. Amrutbhai S. Patel &nbsp;·&nbsp; Smt. Shantaben A. Patel<br>
-      Dr. Mahesh A. Patel &nbsp;·&nbsp; Smt. Daxaben M. Patel<br>
-      Kahaan M. Patel &nbsp;·&nbsp; Hilay M. Patel
-    </div>
-  </footer>
-
-</div>
-<script>
-  (function(){
-    var target = new Date("2026-07-16T06:30:00+05:30").getTime();
-    var elDays = document.getElementById('cd-days');
-    var elHours = document.getElementById('cd-hours');
-    var elMins = document.getElementById('cd-mins');
-    var elSecs = document.getElementById('cd-secs');
-    var pad = function(n){ return String(n).padStart(2,'0'); };
-
-    function tick(){
-      var now = Date.now();
-      var diff = target - now;
-      if(diff <= 0){
-        elDays.textContent = '00'; elHours.textContent = '00';
-        elMins.textContent = '00'; elSecs.textContent = '00';
-        var label = document.querySelector('.countdown');
-        if(label && !label.dataset.done){
-          label.dataset.done = '1';
-          var msg = document.createElement('div');
-          msg.textContent = "It's here!";
-          msg.style.fontFamily = "'Marcellus', serif";
-          msg.style.fontSize = '20px';
-          msg.style.color = 'var(--mauve-deep)';
-          msg.style.width = '100%';
-          msg.style.textAlign = 'center';
-          label.appendChild(msg);
-        }
-        return;
-      }
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
-      elDays.textContent = pad(d);
-      elHours.textContent = pad(h);
-      elMins.textContent = pad(m);
-      elSecs.textContent = pad(s);
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-</script>
-</body>
-</html>
+</script></body></html>
